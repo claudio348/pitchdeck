@@ -910,12 +910,11 @@ html, body {
   max-width: 85%; max-height: 65%;
   width: auto; height: auto;
   object-fit: contain;
-  filter: grayscale(1) contrast(1.05);
-  opacity: 0.82;
+  filter: invert(1) grayscale(1) contrast(1.08);
+  opacity: 0.92;
   transition: opacity 0.25s, filter 0.25s;
-  mix-blend-mode: multiply;
 }
-.brand-cell:hover img { opacity: 1; filter: grayscale(0); }
+.brand-cell:hover img { opacity: 1; }
 
 /* ============ FLYWHEEL ============ */
 .flywheel-stage {
@@ -2570,15 +2569,15 @@ html, body {
 .brand-band-cell:last-child { border-right: 0; }
 .brand-band-cell:hover { background: rgba(12,12,12,0.04); }
 .brand-band-cell img {
-  max-width: 85%; max-height: 60%;
+  max-width: 85%; max-height: 65%;
   width: auto; height: auto;
   object-fit: contain;
-  filter: grayscale(1) contrast(1.05);
-  opacity: 0.85;
+  /* The brand PNGs are WHITE — invert to make them appear black on light bg */
+  filter: invert(1) grayscale(1) contrast(1.08);
+  opacity: 0.92;
   transition: opacity 0.25s, filter 0.25s;
-  mix-blend-mode: multiply;
 }
-.brand-band-cell:hover img { opacity: 1; filter: grayscale(0); }
+.brand-band-cell:hover img { opacity: 1; filter: invert(1) grayscale(1) contrast(1.15); }
 
 /* ============ SLIDE 10: FLYWHEEL — white + tech ============ */
 .fw-slide {
