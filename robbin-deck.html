@@ -835,17 +835,18 @@ html, body {
 .kpis {
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 0;
-  margin-top: 4vh;
+  margin-top: 3vh;
   border-top: 1px solid rgba(0,0,0,0.12);
   border-left: 1px solid rgba(0,0,0,0.12);
 }
 .kpi {
-  padding: 4vh 1.8vw 3vh;
+  padding: 2.5vh 1.6vw 2vh;
   border-right: 1px solid rgba(0,0,0,0.12);
   border-bottom: 1px solid rgba(0,0,0,0.12);
-  display: flex; flex-direction: column; gap: 1vh;
+  display: flex; flex-direction: column; gap: 0.6vh;
   position: relative;
   transition: background 0.3s;
+  min-height: 20vh;
 }
 .kpi:hover { background: var(--accent-soft); }
 .kpi .kpi-num {
@@ -860,7 +861,7 @@ html, body {
 }
 .kpi .kpi-stat {
   font-family: var(--font-sans); font-weight: 800;
-  font-size: clamp(40px, 5vw, 82px);
+  font-size: clamp(36px, 4.2vw, 68px);
   line-height: 0.9; letter-spacing: -0.045em;
   color: var(--ink); margin-top: 0.5vh;
 }
@@ -879,20 +880,31 @@ html, body {
 
 /* Brand wordmark strip — typographic only (since user did NOT upload brand logos) */
 .brand-strip {
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(8, 1fr);
   gap: 0;
-  margin-top: 3vh;
-  border-top: 1px solid rgba(0,0,0,0.10);
-  border-left: 1px solid rgba(0,0,0,0.10);
+  margin-top: auto;
+  padding-top: 3vh;
+  border-top: 1px solid rgba(12,12,12,0.10);
+  position: relative;
+}
+.brand-strip::before {
+  content: '8 LIVE BRANDS · MORE IN PIPELINE';
+  position: absolute;
+  top: 1vh; left: 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700; letter-spacing: 0.25em;
+  color: #6C6C6C;
+  text-transform: uppercase;
 }
 .brand-cell {
-  border-right: 1px solid rgba(0,0,0,0.10);
-  border-bottom: 1px solid rgba(0,0,0,0.10);
-  height: clamp(70px, 10vh, 110px);
+  border-right: 1px solid rgba(12,12,12,0.10);
+  height: clamp(58px, 8vh, 84px);
   display: grid; place-items: center;
-  padding: 1.5vh 0.9vw;
+  padding: 1vh 0.6vw;
   transition: background 0.3s;
 }
+.brand-cell:last-child { border-right: 0; }
 .brand-cell:hover { background: var(--accent-soft); }
 .brand-cell img {
   max-width: 85%; max-height: 65%;
@@ -2090,6 +2102,379 @@ html, body {
 .arch-flow-label.fl-4 { top: 70%; right: 25%; }
 
 
+
+/* ============ SLIDE 11: TIMELINE — Visa white / Robbin black ============ */
+.tl-slide {
+  background: #FAFAFA;
+  color: #0C0C0C;
+}
+.tl-slide .chapter-mark.light-mark,
+.tl-slide .chapter-mark.light-mark .chapter-num,
+.tl-slide .chapter-mark.light-mark .chapter-divider,
+.tl-slide .chapter-mark.light-mark .chapter-year { color: #0C0C0C; }
+.tl-slide .chapter-mark.light-mark .chapter-divider { background: #0C0C0C; }
+
+.tl-head h1 .muted { color: #8B8680; text-decoration: line-through; text-decoration-thickness: 3px; }
+.tl-head h1 .boxed {
+  background: #0C0C0C; color: #FAFAFA;
+  padding: 0 0.18em;
+}
+
+.tl-stack {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 110px 1fr;
+  gap: 1.8vw;
+  margin-top: 4vh;
+  min-height: 0;
+  align-items: stretch;
+}
+.tl-panel {
+  padding: 3vh 2vw 4vh;
+  border-radius: 6px;
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.tl-panel.tl-visa {
+  background: #FFFFFF;
+  color: #0C0C0C;
+  border: 1px solid rgba(12,12,12,0.12);
+}
+.tl-panel.tl-robbin {
+  background: #0C0C0C;
+  color: #FAFAFA;
+}
+.tl-panel-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 2vh;
+  border-bottom: 1px solid currentColor;
+  margin-bottom: 4vh;
+  opacity: 0.9;
+}
+.tl-panel.tl-visa .tl-panel-head { border-bottom-color: rgba(12,12,12,0.15); }
+.tl-panel.tl-robbin .tl-panel-head { border-bottom-color: rgba(250,250,250,0.20); }
+.tl-brand {
+  font-family: var(--font-sans); font-weight: 900;
+  font-size: clamp(22px, 2vw, 32px);
+  letter-spacing: -0.03em;
+}
+.tl-panel.tl-visa .tl-brand { font-style: italic; color: #1A1F71; }
+.tl-span {
+  font-family: var(--font-mono); font-size: 11px;
+  font-weight: 600; letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.tl-track-wrap {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 2vh;
+}
+.tl-track2 {
+  position: absolute; top: 14px; left: 0; right: 0;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.18;
+}
+.tl-panel.tl-robbin .tl-track2 {
+  height: 2px;
+  background: #FAFAFA;
+  opacity: 1;
+  box-shadow: 0 0 12px rgba(250,250,250,0.4);
+}
+.tl-node {
+  position: absolute; top: 0;
+  display: flex; flex-direction: column;
+  align-items: flex-start;
+  width: 150px;
+  transform: translateX(-12px);
+}
+.tl-node.end {
+  transform: translateX(calc(-100% + 12px));
+  align-items: flex-end;
+  text-align: right;
+}
+.tl-dot2 {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: currentColor;
+  margin-bottom: 12px;
+  position: relative;
+  margin-left: 6px;
+}
+.tl-node.end .tl-dot2 { margin-left: 0; margin-right: 6px; }
+.tl-dot2.big {
+  width: 16px; height: 16px;
+  margin-top: -2px;
+}
+.tl-panel.tl-robbin .tl-dot2.big {
+  box-shadow: 0 0 12px rgba(250,250,250,0.55);
+}
+.tl-panel.tl-robbin .tl-dot2 {
+  background: #FAFAFA;
+}
+.tl-year {
+  font-family: var(--font-mono);
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-bottom: 4px;
+}
+.tl-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(11px, 0.85vw, 14px);
+  line-height: 1.4;
+  opacity: 0.8;
+  max-width: 140px;
+}
+.tl-desc b {
+  display: block;
+  font-weight: 800;
+  font-size: 1.15em;
+  margin-bottom: 2px;
+  opacity: 1;
+}
+
+/* Center compare gap */
+.tl-vs {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 6px;
+  position: relative;
+}
+.tl-vs::before {
+  content: '';
+  position: absolute; left: 50%; top: 0; bottom: 0;
+  width: 1px;
+  background: rgba(12,12,12,0.10);
+}
+.tl-vs-label, .tl-vs-sub {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #6C6C6C;
+  text-transform: uppercase;
+  position: relative;
+  background: #FAFAFA;
+  padding: 0 6px;
+}
+.tl-vs-num {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: clamp(34px, 3.6vw, 64px);
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: #0C0C0C;
+  background: #FAFAFA;
+  padding: 4px 0;
+  position: relative;
+}
+
+/* ============ SLIDE 12: REVENUE MODEL — playful ============ */
+.rev-slide {
+  background: #FAFAFA;
+  color: #0C0C0C;
+}
+.rev-slide .chapter-mark.light-mark,
+.rev-slide .chapter-mark.light-mark .chapter-num,
+.rev-slide .chapter-mark.light-mark .chapter-divider,
+.rev-slide .chapter-mark.light-mark .chapter-year { color: #0C0C0C; }
+.rev-slide .chapter-mark.light-mark .chapter-divider { background: #0C0C0C; }
+.rev-slide h1 .boxed {
+  background: #0C0C0C; color: #FAFAFA;
+  padding: 0 0.18em;
+}
+
+.rev-stage {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 4vw;
+  margin-top: 4vh;
+  min-height: 0;
+  align-items: stretch;
+}
+
+/* Left: stacked-bricks visual */
+.rev-stack-wrap {
+  display: flex; flex-direction: column;
+  gap: 1.8vh;
+  min-height: 0;
+}
+.rev-stack-label {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.rev-stack-label span {
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 1.1vw, 18px);
+  color: #0C0C0C;
+}
+.rev-stack-label span b {
+  font-weight: 800;
+  background: #0C0C0C;
+  color: #FAFAFA;
+  padding: 0 0.3em;
+}
+.rev-stack-label i {
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: #6C6C6C;
+  text-transform: uppercase;
+}
+.rev-stack {
+  flex: 1;
+  display: flex; flex-direction: column;
+  gap: 6px;
+  justify-content: flex-end;
+  position: relative;
+}
+.rev-stack::before {
+  content: '↑';
+  position: absolute;
+  right: -28px; top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-sans);
+  font-size: 22px;
+  color: #0C0C0C;
+  opacity: 0.35;
+}
+.rev-brick {
+  background: #FFFFFF;
+  border: 1px solid #0C0C0C;
+  padding: 1.4vh 1.2vw;
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  transition: transform 0.3s, background 0.3s;
+  cursor: default;
+}
+.rev-brick:hover {
+  background: #0C0C0C;
+  color: #FAFAFA;
+  transform: translateX(6px);
+}
+.rev-brick:hover .rb-num { background: #FAFAFA; color: #0C0C0C; }
+.rev-brick .rb-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800; letter-spacing: 0.1em;
+  padding: 4px 0;
+  text-align: center;
+  background: #0C0C0C; color: #FAFAFA;
+}
+.rev-brick b {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(13px, 1.05vw, 17px);
+  letter-spacing: -0.015em;
+}
+.rev-brick i {
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+.rev-base {
+  background: #0C0C0C; color: #FAFAFA;
+  padding: 2vh 1.2vw;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700; letter-spacing: 0.25em;
+  text-transform: uppercase;
+  border: 1px solid #0C0C0C;
+}
+
+/* Right: 4 detail cards (FAB-style) */
+.rev-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.5vh 1.5vw;
+  min-height: 0;
+}
+.rev-fab {
+  padding: 2vh 1.5vw;
+  background: #FFFFFF;
+  border: 1px solid rgba(12,12,12,0.10);
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 14px;
+  row-gap: 8px;
+  align-items: start;
+  position: relative;
+  transition: border-color 0.3s, transform 0.3s, background 0.3s;
+  overflow: hidden;
+}
+.rev-fab:hover {
+  border-color: #0C0C0C;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px -16px rgba(12,12,12,0.30);
+}
+.rev-fab-num {
+  position: absolute;
+  bottom: -10px; right: -8px;
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: clamp(60px, 6vw, 110px);
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  color: rgba(12,12,12,0.06);
+  pointer-events: none;
+  user-select: none;
+}
+.rev-fab-ic {
+  grid-column: 1; grid-row: 1;
+  width: 36px; height: 36px;
+  display: grid; place-items: center;
+  background: #0C0C0C;
+  color: #FAFAFA;
+  border-radius: 6px;
+}
+.rev-fab-ic svg { width: 60%; height: 60%; }
+.rev-fab-body {
+  grid-column: 2; grid-row: 1 / 3;
+}
+.rev-fab-body b {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(16px, 1.4vw, 22px);
+  letter-spacing: -0.025em;
+  margin-bottom: 4px;
+  color: #0C0C0C;
+}
+.rev-fab-body span {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: clamp(12px, 0.9vw, 14px);
+  color: #6C6C6C;
+  line-height: 1.5;
+}
+.rev-fab-tag {
+  position: absolute;
+  top: 14px; right: 14px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #0C0C0C;
+  background: rgba(12,12,12,0.06);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+
 </style>
 </head>
 <body>
@@ -2679,82 +3064,197 @@ html, body {
 </section>
 
 <!-- ============ SLIDE 11: TIMELINE ============ -->
-<section class="slide theme-light" data-num="11">
-  <div class="chapter-mark">
-      <span class="chapter-num">10</span>
-      <span class="chapter-divider"></span>
-      <span class="chapter-year">Speed of Execution</span>
-    </div>
-  <div class="slide-head reveal">
-    <h1>Visa took <span class="muted">50 years.</span><br/>Real-time rails let us do it in <span class="accent">10.</span></h1>
+<section class="slide tl-slide" data-num="11">
+  <div class="chapter-mark light-mark">
+    <span class="chapter-num">10</span>
+    <span class="chapter-divider"></span>
+    <span class="chapter-year">Speed of Execution</span>
   </div>
 
-  <div class="timeline-wrap2 reveal">
-    <div class="tl-row">
-      <div class="tl-track-label">VISA</div>
-      <div class="tl-track">
-        <div class="tl-line"></div>
-        <div class="tl-dot" style="left:0%"><b>1958</b><span>Built on Bank of America balance sheet</span></div>
-        <div class="tl-dot" style="left:24%"><b>1970</b><span>Consortium of banks assumes risk</span></div>
-        <div class="tl-dot" style="left:36%"><b>1976</b><span>Visa network formalized</span></div>
-        <div class="tl-dot end" style="left:100%"><b>2026</b><span>$604B market cap</span></div>
+  <div class="tl-head reveal">
+    <h1>Visa took <span class="muted">68 years.</span><br/>We are doing it in <span class="boxed">10.</span></h1>
+  </div>
+
+  <div class="tl-stack reveal">
+    <!-- VISA — white panel -->
+    <div class="tl-panel tl-visa">
+      <div class="tl-panel-head">
+        <span class="tl-brand">VISA</span>
+        <span class="tl-span">1958 → 2026 · 68 years</span>
+      </div>
+      <div class="tl-track-wrap">
+        <div class="tl-track2"></div>
+        <div class="tl-node" style="left:0%">
+          <div class="tl-dot2"></div>
+          <div class="tl-year">1958</div>
+          <div class="tl-desc">Built on Bank of America balance sheet</div>
+        </div>
+        <div class="tl-node" style="left:18%">
+          <div class="tl-dot2"></div>
+          <div class="tl-year">1970</div>
+          <div class="tl-desc">Consortium of banks assumes risk</div>
+        </div>
+        <div class="tl-node" style="left:26%">
+          <div class="tl-dot2"></div>
+          <div class="tl-year">1976</div>
+          <div class="tl-desc">Visa network formalized</div>
+        </div>
+        <div class="tl-node end" style="left:100%">
+          <div class="tl-dot2 big"></div>
+          <div class="tl-year">2026</div>
+          <div class="tl-desc"><b>USD 604B</b> market cap</div>
+        </div>
       </div>
     </div>
-    <div class="tl-row">
-      <div class="tl-track-label is-robbin">ROBBIN</div>
-      <div class="tl-track">
-        <div class="tl-line is-robbin"></div>
-        <div class="tl-dot is-robbin" style="left:0%"><b>2024</b><span>Launched on own balance sheet</span></div>
-        <div class="tl-dot is-robbin" style="left:30%"><b>2026</b><span>Outside capital funds the network</span></div>
-        <div class="tl-dot is-robbin" style="left:55%"><b>2026</b><span>MOU signed with Tier-1 bank</span></div>
-        <div class="tl-dot is-robbin end" style="left:100%"><b>Future</b><span>Full infrastructure on real-time rails</span></div>
+
+    <!-- Vs gap with comparator -->
+    <div class="tl-vs">
+      <span class="tl-vs-label">acceleration</span>
+      <span class="tl-vs-num">6.8×</span>
+      <span class="tl-vs-sub">faster</span>
+    </div>
+
+    <!-- ROBBIN — black panel -->
+    <div class="tl-panel tl-robbin">
+      <div class="tl-panel-head">
+        <span class="tl-brand">ROBBIN</span>
+        <span class="tl-span">2024 → 2034 · 10 years</span>
+      </div>
+      <div class="tl-track-wrap">
+        <div class="tl-track2"></div>
+        <div class="tl-node" style="left:0%">
+          <div class="tl-dot2"></div>
+          <div class="tl-year">2024</div>
+          <div class="tl-desc">Launched on our own balance sheet</div>
+        </div>
+        <div class="tl-node" style="left:22%">
+          <div class="tl-dot2"></div>
+          <div class="tl-year">2026</div>
+          <div class="tl-desc">Outside capital funds the network</div>
+        </div>
+        <div class="tl-node" style="left:42%">
+          <div class="tl-dot2"></div>
+          <div class="tl-year">2026</div>
+          <div class="tl-desc">MOU signed w/ Tier-1 bank</div>
+        </div>
+        <div class="tl-node end" style="left:100%">
+          <div class="tl-dot2 big"></div>
+          <div class="tl-year">Future</div>
+          <div class="tl-desc"><b>Full infra</b> on real-time rails</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ SLIDE 12: REVENUE MODEL ============ -->
-<section class="slide theme-light" data-num="12">
-  <div class="chapter-mark">
-      <span class="chapter-num">11</span>
-      <span class="chapter-divider"></span>
-      <span class="chapter-year">Revenue Model</span>
-    </div>
-  <div class="slide-head reveal">
-    <h1>How we <span class="accent">make money.</span></h1>
+<section class="slide theme-light rev-slide" data-num="12">
+  <div class="chapter-mark light-mark">
+    <span class="chapter-num">11</span>
+    <span class="chapter-divider"></span>
+    <span class="chapter-year">Revenue Model</span>
   </div>
 
-  <div class="rev-grid reveal" data-stagger>
-    <div class="rev-card">
-      <div class="rev-num">01</div>
-      <div class="rev-body">
-        <div class="rev-tag">Take rate</div>
-        <h3>Interchange</h3>
-        <p>Fee on every PIX-railed transaction routed through the network.</p>
+  <div class="slide-head reveal">
+    <h1>Four revenue streams.<br/>One <span class="boxed">PIX-railed</span> network.</h1>
+  </div>
+
+  <div class="rev-stage reveal">
+    <!-- Left: a stack-of-bricks visual showing how revenue compounds -->
+    <div class="rev-stack-wrap">
+      <div class="rev-stack-label">
+        <span>For every <b>R$ 1</b> of TPV</span>
+        <i>revenue stacks up</i>
+      </div>
+      <div class="rev-stack">
+        <div class="rev-brick rb-1">
+          <span class="rb-num">04</span>
+          <b>Network services</b>
+          <i>SaaS-like fees</i>
+        </div>
+        <div class="rev-brick rb-2">
+          <span class="rb-num">03</span>
+          <b>Float</b>
+          <i>T+0 yield</i>
+        </div>
+        <div class="rev-brick rb-3">
+          <span class="rb-num">02</span>
+          <b>Credit spread</b>
+          <i>NIM on funded credit</i>
+        </div>
+        <div class="rev-brick rb-4">
+          <span class="rb-num">01</span>
+          <b>Interchange</b>
+          <i>take rate per tx</i>
+        </div>
+        <div class="rev-base">
+          <span>PIX transaction</span>
+        </div>
       </div>
     </div>
-    <div class="rev-card">
-      <div class="rev-num">02</div>
-      <div class="rev-body">
-        <div class="rev-tag">NIM</div>
-        <h3>Credit spread</h3>
-        <p>Net interest margin on SME credit lines, funded by partner banks.</p>
+
+    <!-- Right: 4 detail cards with playful icons -->
+    <div class="rev-detail" data-stagger>
+      <div class="rev-fab">
+        <div class="rev-fab-num">01</div>
+        <div class="rev-fab-ic">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="4" y="9" width="24" height="16" rx="2"/>
+            <line x1="4" y1="14" x2="28" y2="14"/>
+            <line x1="8" y1="20" x2="14" y2="20"/>
+          </svg>
+        </div>
+        <div class="rev-fab-body">
+          <b>Interchange</b>
+          <span>Take rate on every PIX-railed transaction routed through the network.</span>
+        </div>
+        <div class="rev-fab-tag">take rate</div>
       </div>
-    </div>
-    <div class="rev-card">
-      <div class="rev-num">03</div>
-      <div class="rev-body">
-        <div class="rev-tag">Yield</div>
-        <h3>Float</h3>
-        <p>Yield on settlement balances across T+0 cycles.</p>
+
+      <div class="rev-fab">
+        <div class="rev-fab-num">02</div>
+        <div class="rev-fab-ic">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M4 24 L12 16 L18 22 L28 8"/>
+            <path d="M22 8 L28 8 L28 14"/>
+          </svg>
+        </div>
+        <div class="rev-fab-body">
+          <b>Credit spread</b>
+          <span>Net interest margin on SME credit lines, funded by partner banks.</span>
+        </div>
+        <div class="rev-fab-tag">NIM</div>
       </div>
-    </div>
-    <div class="rev-card">
-      <div class="rev-num">04</div>
-      <div class="rev-body">
-        <div class="rev-tag">SaaS-like</div>
-        <h3>Network services</h3>
-        <p>Credit scoring, servicing &amp; AI agents licensed to suppliers and banks.</p>
+
+      <div class="rev-fab">
+        <div class="rev-fab-num">03</div>
+        <div class="rev-fab-ic">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="16" cy="16" r="11"/>
+            <path d="M16 9 L16 16 L21 19"/>
+            <path d="M11 16 L8 16 M24 16 L21 16"/>
+          </svg>
+        </div>
+        <div class="rev-fab-body">
+          <b>Float</b>
+          <span>Yield on settlement balances during T+0 cycles.</span>
+        </div>
+        <div class="rev-fab-tag">yield</div>
+      </div>
+
+      <div class="rev-fab">
+        <div class="rev-fab-num">04</div>
+        <div class="rev-fab-ic">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="16" cy="16" r="3"/>
+            <path d="M16 5 L16 8 M16 24 L16 27 M5 16 L8 16 M24 16 L27 16 M8.3 8.3 L10.5 10.5 M21.5 21.5 L23.7 23.7 M8.3 23.7 L10.5 21.5 M21.5 10.5 L23.7 8.3"/>
+          </svg>
+        </div>
+        <div class="rev-fab-body">
+          <b>Network services</b>
+          <span>Credit scoring, servicing &amp; AI agents licensed to suppliers and banks.</span>
+        </div>
+        <div class="rev-fab-tag">SaaS-like</div>
       </div>
     </div>
   </div>
