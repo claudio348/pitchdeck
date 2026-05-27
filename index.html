@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Robbin — B2B Payment Network</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- AMBIENT BACKGROUND -->
+<div class="ambient">
+  <div class="grain"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="grid-bg"></div>
+</div>
+
+<!-- TOP NAV -->
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">R</span>
+    <span class="brand-name">robbin</span>
+  </div>
+  <div class="topbar-meta">
+    <span class="meta-pill">PITCH · MAY 2026</span>
+    <span class="counter"><b id="curSlide">01</b><span class="slash">/</span><span id="totSlide">17</span></span>
+  </div>
+</header>
+
+<!-- PROGRESS BAR -->
+<div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- MINI MAP -->
+<nav class="minimap" aria-label="slide navigation">
+  <ol id="minimapList"></ol>
+</nav>
+
+<!-- HINT -->
+<div class="hint" id="hint">
+  <kbd>↑</kbd><kbd>↓</kbd> or <kbd>Space</kbd> · scroll to navigate
+</div>
+
+<!-- DECK -->
+<main class="deck" id="deck">
+
+  <!-- ============================ SLIDE 1: COVER ============================ -->
+  <section class="slide cover" data-title="Cover" data-num="01">
+    <div class="cover-bg">
+      <svg class="halo" viewBox="0 0 800 800" aria-hidden="true">
+        <defs>
+          <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFAB40" stop-opacity="0.55"/>
+            <stop offset="60%" stop-color="#FFAB40" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="400" cy="400" r="400" fill="url(#halo)"/>
+      </svg>
+    </div>
+    <div class="cover-content">
+      <div class="cover-logo">
+        <span class="cover-logo-mark">R</span>
+        <span class="cover-logo-name">robbin</span>
+      </div>
+      <h1 class="cover-title">
+        <span class="reveal">B2B</span>
+        <span class="reveal delay-1">Payment</span>
+        <span class="reveal delay-2 gold">Network.</span>
+      </h1>
+      <p class="cover-sub reveal delay-3">A bank for the next 50 years of business payments — re-built on real-time rails.</p>
+      <div class="cover-foot reveal delay-4">
+        <span class="dot"></span>
+        <span>Confidential pitch · v.TRIAXIS</span>
+      </div>
+    </div>
+    <div class="scroll-cue">scroll<span class="cue-line"></span></div>
+  </section>
+
+  <!-- ============================ SLIDE 2: TEAM ============================ -->
+  <section class="slide team" data-title="Team" data-num="02">
+    <div class="slide-inner">
+      <div class="eyebrow">02 · Team</div>
+      <h2 class="big-headline">
+        Deep domain & technical expertise,<br/>
+        <span class="gold">our right to win.</span>
+      </h2>
+
+      <div class="team-grid">
+        <div class="team-col">
+          <div class="col-label">FOUNDERS</div>
+          <div class="founders">
+            <article class="person">
+              <div class="avatar"><span>LM</span></div>
+              <div class="who">
+                <h4>Leonardo Moura</h4>
+                <span>CEO</span>
+              </div>
+            </article>
+            <article class="person">
+              <div class="avatar"><span>HM</span></div>
+              <div class="who">
+                <h4>Henrique Meyer</h4>
+                <span>COO</span>
+              </div>
+            </article>
+            <article class="person">
+              <div class="avatar"><span>TC</span></div>
+              <div class="who">
+                <h4>Tomás Corrêa</h4>
+                <span>CTO</span>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="team-col">
+          <div class="col-label">INVESTORS</div>
+          <div class="investors">
+            <div class="inv-logo">MONASHEES</div>
+            <div class="inv-logo">CANARY</div>
+            <div class="inv-logo">QED</div>
+            <div class="inv-logo">KASZEK</div>
+            <div class="inv-logo">ANGELS</div>
+            <div class="inv-logo">+ FOUNDERS</div>
+          </div>
+          <p class="inv-note">Backed by tier-one Latam fintech funds and operator angels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 3: CONSUMER VS B2B ============================ -->
+  <section class="slide compare" data-title="The Gap" data-num="03">
+    <div class="slide-inner">
+      <div class="eyebrow">03 · The opportunity</div>
+      <h2 class="big-headline">For 50 years, consumer payments became<br/>
+        <span class="gold">seamless, financed, rewarded.</span><br/>
+        B2B did not.
+      </h2>
+
+      <div class="versus">
+        <div class="vs-card vs-good">
+          <div class="vs-tag">Consumer</div>
+          <div class="vs-amt">$50<span>T</span><sup>1</sup></div>
+          <ul class="vs-list">
+            <li><span class="check">✓</span> Seamless</li>
+            <li><span class="check">✓</span> Financed</li>
+            <li><span class="check">✓</span> Rewarded</li>
+          </ul>
+          <div class="vs-enabled">Enabled by <span class="card-chip"></span></div>
+        </div>
+
+        <div class="vs-divider"><span>vs</span></div>
+
+        <div class="vs-card vs-bad">
+          <div class="vs-tag">B2B</div>
+          <div class="vs-amt">$124<span>T</span><sup>1</sup></div>
+          <ul class="vs-list">
+            <li><span class="cross">✕</span> Paper invoices</li>
+            <li><span class="cross">✕</span> Financing gap</li>
+            <li><span class="cross">✕</span> No rewards</li>
+          </ul>
+          <div class="vs-enabled">Enabled by <span class="q-mark">?</span></div>
+        </div>
+      </div>
+
+      <div class="fineprint">(1) Juniper Research, 2024.</div>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 4: WRONG RAIL ============================ -->
+  <section class="slide wrong-rail" data-title="Wrong Rail" data-num="04">
+    <div class="slide-inner">
+      <div class="eyebrow">04 · 2024 lesson</div>
+      <h2 class="big-headline">
+        In 2024 we built the right product<br/>
+        <span class="muted">on the</span> <span class="gold strike">wrong rail</span><span class="muted">.</span>
+      </h2>
+
+      <div class="rail-stage">
+        <div class="rail-card-wrap">
+          <div class="rail-card">
+            <div class="rc-top">
+              <span class="rc-brand">CARTÃO CANTU</span>
+              <span class="rc-visa">VISA</span>
+            </div>
+            <div class="rc-chip"></div>
+            <div class="rc-num">4520  •••• ••••  9412</div>
+            <div class="rc-foot">
+              <span>R. SILVA</span>
+              <span>12/29</span>
+            </div>
+            <div class="rc-cross"></div>
+          </div>
+          <div class="rail-stamp">WRONG RAIL</div>
+        </div>
+
+        <div class="rail-issues">
+          <div class="ri"><i></i> Paper invoices</div>
+          <div class="ri"><i></i> Financing gap</div>
+          <div class="ri"><i></i> No rewards</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 5: PIX RAILED ============================ -->
+  <section class="slide pix-rail" data-title="PIX Card" data-num="05">
+    <div class="slide-inner">
+      <div class="eyebrow">05 · The pivot</div>
+      <h2 class="big-headline">Meet the <span class="gold">PIX-Railed</span> Credit Card.</h2>
+
+      <div class="pix-stage">
+        <div class="pix-card">
+          <div class="pc-glow"></div>
+          <div class="pc-top">
+            <span class="pc-brand">robbin</span>
+            <span class="pc-pix">⚡ PIX</span>
+          </div>
+          <div class="pc-chip"></div>
+          <div class="pc-num">5000  ROBBIN  •  B2B</div>
+          <div class="pc-foot">
+            <div>
+              <span class="pc-label">Acquiring cost</span>
+              <span class="pc-val gold">0%</span>
+            </div>
+            <div>
+              <span class="pc-label">Settlement</span>
+              <span class="pc-val gold">Instant</span>
+            </div>
+            <div>
+              <span class="pc-label">Credit</span>
+              <span class="pc-val gold">On-rail</span>
+            </div>
+          </div>
+        </div>
+        <ul class="pix-bullets">
+          <li><span class="b-num">01</span> Real-time settlement on PIX rail</li>
+          <li><span class="b-num">02</span> Credit underwritten on supplier data</li>
+          <li><span class="b-num">03</span> Rewards & financing co-branded with suppliers</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 6: GLOBAL RAILS ============================ -->
+  <section class="slide rails-map" data-title="Global Rails" data-num="06">
+    <div class="slide-inner">
+      <div class="eyebrow">06 · Why now</div>
+      <h2 class="big-headline">Real-time payment rails — <span class="gold">everywhere</span>.</h2>
+      <p class="lede">The rails Visa spent decades building became <b>cheaper</b> and <b>better</b>.</p>
+
+      <div class="rails-grid">
+        <div class="rail-tile"><span class="rt-flag">🇺🇸</span><b>FedNow</b><span class="rt-year">2023</span></div>
+        <div class="rail-tile"><span class="rt-flag">🇲🇽</span><b>SPEI</b><span class="rt-year">2004</span></div>
+        <div class="rail-tile"><span class="rt-flag">🇨🇴</span><b>Bre-B</b><span class="rt-year">2025</span></div>
+        <div class="rail-tile featured"><span class="rt-flag">🇧🇷</span><b>PIX</b><span class="rt-year">2020</span><span class="rt-badge">Robbin's rail</span></div>
+        <div class="rail-tile"><span class="rt-flag">🇦🇷</span><b>Transferencias 3.0</b><span class="rt-year">2020</span></div>
+        <div class="rail-tile"><span class="rt-flag">🇪🇺</span><b>SEPA Instant</b><span class="rt-year">2017</span></div>
+        <div class="rail-tile"><span class="rt-flag">🇶🇦</span><b>Fawran</b><span class="rt-year">2024</span></div>
+        <div class="rail-tile"><span class="rt-flag">🇿🇦</span><b>PayShap</b><span class="rt-year">2023</span></div>
+        <div class="rail-tile"><span class="rt-flag">🇮🇳</span><b>UPI</b><span class="rt-year">2016</span></div>
+        <div class="rail-tile"><span class="rt-flag">🇹🇭</span><b>PromptPay</b><span class="rt-year">2016</span></div>
+        <div class="rail-tile"><span class="rt-flag">🇸🇬</span><b>PayNow</b><span class="rt-year">2017</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 7: NETWORK ============================ -->
+  <section class="slide network" data-title="Network" data-num="07">
+    <div class="slide-inner">
+      <div class="eyebrow">07 · Architecture</div>
+      <h2 class="big-headline">Robbin: <span class="gold">B2B payment network</span> built on PIX.</h2>
+
+      <div class="network-diagram">
+        <div class="net-node net-suppliers">
+          <div class="net-label">Suppliers</div>
+          <div class="net-sub">co-brand</div>
+        </div>
+        <div class="net-node net-banks">
+          <div class="net-label">Banks</div>
+          <div class="net-sub">fund untapped market</div>
+        </div>
+        <div class="net-node net-sellers">
+          <div class="net-label">Sellers</div>
+          <div class="net-sub">SMEs <b class="gold">20M+</b></div>
+        </div>
+
+        <div class="net-core">
+          <div class="core-ring r1"></div>
+          <div class="core-ring r2"></div>
+          <div class="core-ring r3"></div>
+          <div class="core-center">
+            <span>ROBBIN</span>
+            <small>Network Orchestrator</small>
+          </div>
+          <div class="core-tag tag-issuer">Issuer</div>
+          <div class="core-tag tag-acquiring">Acquiring</div>
+          <div class="core-tag tag-funding">Funding</div>
+          <div class="core-tag tag-app">Application</div>
+        </div>
+
+        <svg class="net-lines" viewBox="0 0 1000 600" preserveAspectRatio="none">
+          <line x1="120" y1="120" x2="500" y2="300" />
+          <line x1="120" y1="480" x2="500" y2="300" />
+          <line x1="880" y1="300" x2="500" y2="300" />
+        </svg>
+      </div>
+
+      <div class="net-notes">
+        <span><b class="gold">0%</b> acquiring cost (nation-wide PIX)</span>
+        <span><b class="gold">Trust + Data</b> from supplier rail</span>
+        <span><b class="gold">AI agents</b> for credit & servicing</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 8: 280B MARKET ============================ -->
+  <section class="slide market" data-title="$280B Market" data-num="08">
+    <div class="slide-inner">
+      <div class="eyebrow">08 · TAM</div>
+      <h2 class="big-headline">Banks are gaining access to a<br/>
+        <span class="huge-num">USD 280<span class="huge-unit">B</span></span><br/>
+        <span class="gold">untapped market.</span>
+      </h2>
+
+      <div class="market-stage">
+        <div class="bar-stack" aria-label="SME working capital by origin">
+          <div class="bar-row">
+            <span class="bar-label">Banks</span>
+            <div class="bar"><span style="width:42%"></span></div>
+            <span class="bar-val">42%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Trade credit (suppliers)</span>
+            <div class="bar gold-bar"><span style="width:38%"></span></div>
+            <span class="bar-val gold">38%</span>
+            <span class="bar-tag">← Robbin unlocks this</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Other</span>
+            <div class="bar"><span style="width:20%"></span></div>
+            <span class="bar-val">20%</span>
+          </div>
+        </div>
+        <p class="caption">SME working-capital origin · share of short-term financing</p>
+        <p class="source">Source: McGuinness, Hogan & Powell (2018); Berger & Udell (2006); Demirgüç-Kunt & Maksimovic (2001); Finkelstein Shapiro et al. (2018); Machokoto et al. (2022).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 9: TRACTION ============================ -->
+  <section class="slide traction" data-title="Traction" data-num="09">
+    <div class="slide-inner">
+      <div class="eyebrow">09 · Traction</div>
+      <h2 class="big-headline">It's <span class="gold">already</span> here.</h2>
+
+      <div class="kpis">
+        <div class="kpi">
+          <div class="kpi-tag">SUPPLIERS</div>
+          <div class="kpi-num"><span class="cnt" data-to="8">0</span></div>
+          <div class="kpi-sub">live brands</div>
+          <div class="kpi-foot">+12K sitting outside</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-tag">FUNDING PROVIDERS</div>
+          <div class="kpi-num"><span class="cnt" data-to="2">0</span></div>
+          <div class="kpi-sub">publicly listed top-tier banks</div>
+          <div class="kpi-foot">confidential</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-tag">SMEs IN THE NETWORK</div>
+          <div class="kpi-num"><span class="cnt" data-to="2400">0</span></div>
+          <div class="kpi-sub">SMEs</div>
+          <div class="kpi-foot">+5M sitting outside</div>
+        </div>
+        <div class="kpi big">
+          <div class="kpi-tag">TPV</div>
+          <div class="kpi-num">USD <span class="cnt" data-to="34">0</span>M</div>
+          <div class="kpi-sub">processed</div>
+          <div class="kpi-foot">growing weekly</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 10: FLYWHEEL ============================ -->
+  <section class="slide flywheel" data-title="Flywheel" data-num="10">
+    <div class="slide-inner">
+      <div class="eyebrow">10 · Flywheel</div>
+      <h2 class="big-headline">Supplier <span class="gold">trust, distribution & data</span> power the network.</h2>
+
+      <div class="fw-wrap">
+        <div class="fw-orbit">
+          <div class="fw-step" style="--a:0deg"><b>↑</b> Suppliers</div>
+          <div class="fw-step" style="--a:60deg"><b>↑</b> Trust · Data</div>
+          <div class="fw-step" style="--a:120deg"><b>↑</b> Funding Providers</div>
+          <div class="fw-step" style="--a:180deg"><b>↑</b> Credit · <b>↓</b> Costs</div>
+          <div class="fw-step" style="--a:240deg"><b>↑</b> Transactions · Sales</div>
+          <div class="fw-step" style="--a:300deg"><b>↑</b> SMEs</div>
+          <div class="fw-hub">
+            <span>ROBBIN</span>
+            <small>flywheel</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 11: VISA TIMELINE ============================ -->
+  <section class="slide timeline" data-title="Timeline" data-num="11">
+    <div class="slide-inner">
+      <div class="eyebrow">11 · Speed of execution</div>
+      <h2 class="big-headline">Visa took <span class="strike muted">50 years</span>.<br/>
+        Real-time rails let us do it in <span class="gold">10</span>.</h2>
+
+      <div class="timeline-wrap">
+        <div class="tl-row tl-visa">
+          <div class="tl-track-label">VISA</div>
+          <div class="tl-track">
+            <div class="tl-dot" style="left:0%"><b>1958</b><span>Built on BofA balance sheet</span></div>
+            <div class="tl-dot" style="left:25%"><b>1970</b><span>Bank consortium assumes risk</span></div>
+            <div class="tl-dot" style="left:38%"><b>1976</b><span>Visa network formalized</span></div>
+            <div class="tl-dot end" style="left:100%"><b>2026</b><span>$604B market cap</span></div>
+            <div class="tl-line"></div>
+          </div>
+        </div>
+        <div class="tl-row tl-robbin">
+          <div class="tl-track-label gold">ROBBIN</div>
+          <div class="tl-track">
+            <div class="tl-dot gold-dot" style="left:0%"><b>2024</b><span>Launched on own balance sheet</span></div>
+            <div class="tl-dot gold-dot" style="left:33%"><b>2026</b><span>Outside capital funds network</span></div>
+            <div class="tl-dot gold-dot" style="left:55%"><b>2026</b><span>MOU w/ Tier-1 bank</span></div>
+            <div class="tl-dot gold-dot end" style="left:100%"><b>Future</b><span>Full infra on real-time rails</span></div>
+            <div class="tl-line gold-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 12: REVENUE MODEL ============================ -->
+  <section class="slide revenue" data-title="Revenue" data-num="12">
+    <div class="slide-inner">
+      <div class="eyebrow">12 · How we make money</div>
+      <h2 class="big-headline">Revenue Model.</h2>
+
+      <div class="rev-grid">
+        <div class="rev-card">
+          <div class="rev-num">01</div>
+          <h3>Interchange</h3>
+          <p>Take rate on every PIX-railed transaction routed through the network.</p>
+        </div>
+        <div class="rev-card">
+          <div class="rev-num">02</div>
+          <h3>Credit Spread</h3>
+          <p>Net interest margin from funded SME credit lines, sourced from partner banks.</p>
+        </div>
+        <div class="rev-card">
+          <div class="rev-num">03</div>
+          <h3>Float</h3>
+          <p>Yield on settlement balances during T+0 cycles.</p>
+        </div>
+        <div class="rev-card">
+          <div class="rev-num">04</div>
+          <h3>Network Services</h3>
+          <p>Credit scoring, AI agents and servicing licensed to suppliers and banks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 13: COMPOUNDING ============================ -->
+  <section class="slide growth" data-title="Growth" data-num="13">
+    <div class="slide-inner">
+      <div class="eyebrow">13 · The network is compounding</div>
+      <h2 class="big-headline">The network is <span class="gold">compounding</span>.</h2>
+
+      <div class="growth-grid">
+        <div class="chart-card">
+          <div class="chart-title">Revenue Run Rate <span>· USD thousands</span></div>
+          <svg class="chart" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="rrr" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FFAB40" stop-opacity="0.7"/>
+                <stop offset="100%" stop-color="#FFAB40" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,190 L40,180 L80,170 L120,150 L160,130 L200,110 L240,80 L280,55 L320,30 L360,15 L400,5 L400,200 L0,200 Z" fill="url(#rrr)"/>
+            <path d="M0,190 L40,180 L80,170 L120,150 L160,130 L200,110 L240,80 L280,55 L320,30 L360,15 L400,5" stroke="#FFAB40" stroke-width="3" fill="none"/>
+          </svg>
+          <div class="chart-axis"><span>Jan</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Today</span></div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-title">Network Participants <span>· Suppliers + SMEs</span></div>
+          <svg class="chart" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="np" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#7DD3FC" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="#7DD3FC" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,195 L40,190 L80,180 L120,165 L160,140 L200,115 L240,85 L280,60 L320,35 L360,18 L400,8 L400,200 L0,200 Z" fill="url(#np)"/>
+            <path d="M0,195 L40,190 L80,180 L120,165 L160,140 L200,115 L240,85 L280,60 L320,35 L360,18 L400,8" stroke="#7DD3FC" stroke-width="3" fill="none"/>
+          </svg>
+          <div class="chart-axis"><span>Jan</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Today</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 14: DEMO INDÚSTRIA ============================ -->
+  <section class="slide demo-section" data-title="Demo · Indústria" data-num="14">
+    <div class="slide-inner demo-inner">
+      <div class="eyebrow">14 · Demo</div>
+      <h2 class="big-headline gold">Demo · Indústria</h2>
+      <div class="device frame-laptop">
+        <div class="laptop-bar"><span></span><span></span><span></span></div>
+        <div class="laptop-screen">
+          <div class="dash">
+            <div class="dash-side">
+              <div class="dash-logo">robbin · indústria</div>
+              <ul class="dash-menu">
+                <li class="on">Painel</li>
+                <li>Distribuidores</li>
+                <li>Limites</li>
+                <li>Transações</li>
+                <li>Relatórios</li>
+              </ul>
+            </div>
+            <div class="dash-main">
+              <div class="dash-cards">
+                <div class="dash-c"><span>TPV mês</span><b>R$ 4,2M</b></div>
+                <div class="dash-c"><span>Distribuidores ativos</span><b>312</b></div>
+                <div class="dash-c"><span>Inadimplência</span><b class="gold">0,9%</b></div>
+              </div>
+              <div class="dash-chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 15: DEMO ROBBINSON ============================ -->
+  <section class="slide demo-section" data-title="Demo · Robbinson" data-num="15">
+    <div class="slide-inner demo-inner">
+      <div class="eyebrow">15 · Demo</div>
+      <h2 class="big-headline gold">Demo · Robbinson <span class="muted">(vendedor)</span></h2>
+      <div class="device frame-tablet">
+        <div class="tablet-screen">
+          <div class="seller">
+            <div class="seller-hdr">
+              <span class="seller-name">Olá, João</span>
+              <span class="seller-pix">⚡ Cobrar via PIX</span>
+            </div>
+            <div class="seller-list">
+              <div class="seller-row"><span>Distribuidora ABC</span><b>R$ 12.300</b><i class="ok">PAGO</i></div>
+              <div class="seller-row"><span>Mercadinho Sul</span><b>R$ 4.820</b><i class="pend">PENDENTE</i></div>
+              <div class="seller-row"><span>Padaria do Z.</span><b>R$ 980</b><i class="ok">PAGO</i></div>
+              <div class="seller-row"><span>Atacado Norte</span><b>R$ 28.450</b><i class="ok">PAGO</i></div>
+            </div>
+            <button class="seller-cta">+ Nova cobrança</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 16: DEMO APP ============================ -->
+  <section class="slide demo-section" data-title="Demo · App" data-num="16">
+    <div class="slide-inner demo-inner">
+      <div class="eyebrow">16 · Demo</div>
+      <h2 class="big-headline gold">Demo · APP</h2>
+      <div class="device frame-phone">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-app">
+            <div class="phone-hdr">
+              <span>robbin</span>
+              <span class="phone-bell">●</span>
+            </div>
+            <div class="phone-balance">
+              <span>Limite disponível</span>
+              <b>R$ 38.420,00</b>
+              <small>de R$ 50.000,00</small>
+              <div class="phone-bar"><span style="width:77%"></span></div>
+            </div>
+            <div class="phone-actions">
+              <button>Pagar</button>
+              <button class="gold-btn">PIX</button>
+              <button>Extrato</button>
+            </div>
+            <div class="phone-tx">
+              <div><span>⚡ PIX · Distribuidor</span><b>- R$ 1.240</b></div>
+              <div><span>⚡ PIX · Atacadão</span><b>- R$ 4.890</b></div>
+              <div><span>↺ Fatura paga</span><b class="gold">- R$ 12.000</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 17: CLOSING ============================ -->
+  <section class="slide closing" data-title="Vision" data-num="17">
+    <div class="cover-bg">
+      <svg class="halo" viewBox="0 0 800 800" aria-hidden="true">
+        <circle cx="400" cy="400" r="380" fill="url(#halo)"/>
+      </svg>
+    </div>
+    <div class="closing-content">
+      <div class="eyebrow center">17 · Vision</div>
+      <h2 class="closing-line">
+        <span class="reveal">Restoring</span>
+        <span class="reveal delay-1 gold">growth & pride</span>
+        <span class="reveal delay-2">to Main Street.</span>
+      </h2>
+      <div class="closing-logo reveal delay-3">
+        <span class="cover-logo-mark">R</span>
+        <span class="cover-logo-name">robbin</span>
+      </div>
+      <p class="closing-cta reveal delay-4">Let's build the next 50 years of B2B payments.</p>
+    </div>
+  </section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
