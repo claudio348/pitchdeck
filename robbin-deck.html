@@ -6914,6 +6914,83 @@ body.is-timeline .deck-mark-mini { display: none; }
   gap: 6px;
 }
 
+
+/* Slide 7 — fill page + supplier emphasis + feedback loop */
+.arch3-slide {
+  display: grid !important;
+  grid-template-rows: auto auto 1fr auto auto;
+  gap: 0;
+}
+.arch3-flow {
+  align-items: stretch;
+  margin-top: 4vh;
+}
+.arch3-step-card {
+  padding: 3vh 1.6vw;
+  min-height: clamp(220px, 32vh, 320px);
+}
+.arch3-hub .arch3-hub-card {
+  padding: 3vh 1.4vw;
+  min-height: clamp(220px, 32vh, 320px);
+}
+
+/* "↑ Sell more" highlight in Suppliers card */
+.arch3-meta-supplier {
+  display: flex !important; flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+.arch3-sell-more {
+  font-family: var(--font-sans) !important;
+  font-weight: 900 !important;
+  font-size: clamp(15px, 1.3vw, 20px) !important;
+  letter-spacing: -0.02em !important;
+  color: #FAFAFA !important;
+  background: #0C0C0C;
+  padding: 4px 12px !important;
+  border-radius: 999px;
+  text-transform: none !important;
+}
+.arch3-meta-sub {
+  font-family: var(--font-mono);
+  font-size: 9px !important;
+  letter-spacing: 0.18em;
+  color: #6C6C6C !important;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Feedback loopback arrow */
+.arch3-loopback {
+  position: relative;
+  height: clamp(60px, 8vh, 90px);
+  margin: 1.5vh 0;
+  width: 100%;
+}
+.arch3-loopback svg {
+  width: 100%; height: 100%;
+  position: absolute; inset: 0;
+}
+.arch3-loopback svg path {
+  animation: arch3LoopFlow 1.8s linear infinite;
+}
+@keyframes arch3LoopFlow { to { stroke-dashoffset: -20; } }
+.arch3-loopback-label {
+  position: absolute;
+  left: 50%; bottom: 4px;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: #0C0C0C;
+  background: #FAFAFA;
+  padding: 4px 14px;
+  border: 1px solid #0C0C0C;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 </style>
 </head>
 <body>
@@ -7374,8 +7451,9 @@ body.is-timeline .deck-mark-mini { display: none; }
         </svg>
         <h3>Suppliers</h3>
         <p>Anchor brands co-brand the product. They bring <b>distribution, data &amp; trust</b>.</p>
-        <div class="arch3-meta">
-          <span>Settlements in T+0</span>
+        <div class="arch3-meta arch3-meta-supplier">
+          <span class="arch3-sell-more">↑ Sell more</span>
+          <span class="arch3-meta-sub">Settlements in T+0</span>
         </div>
       </div>
     </div>
