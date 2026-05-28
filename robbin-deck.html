@@ -6991,6 +6991,74 @@ body.is-timeline .deck-mark-mini { display: none; }
   white-space: nowrap;
 }
 
+
+/* Slide 7 — Banks centered under Robbin with long vertical connecting arrow */
+.arch3-banks-v2 {
+  display: grid;
+  grid-template-columns: 1fr 70px 1fr 1fr;
+  margin: 0 auto;
+  width: 100%;
+  align-items: stretch;
+}
+.arch3-banks-long-arrow {
+  grid-column: 2 / 4;
+  width: 100%;
+  height: clamp(80px, 12vh, 140px);
+  margin: 0 auto;
+  display: block;
+}
+.arch3-banks-long-arrow path {
+  animation: arch3LongFlow 1.8s linear infinite;
+}
+@keyframes arch3LongFlow { to { stroke-dashoffset: -20; } }
+
+.arch3-banks-card-v2 {
+  grid-column: 2 / 4;
+  background: #FFFFFF;
+  border: 1px solid #0C0C0C;
+  border-radius: 8px;
+  padding: 2vh 1.8vw;
+  display: flex; flex-direction: column;
+  gap: 1.5vh;
+}
+.arch3-banks-card-v2 .arch3-banks-head {
+  padding-bottom: 1vh;
+  border-bottom: 1px solid rgba(12,12,12,0.10);
+  display: flex; align-items: baseline; gap: 12px;
+}
+.arch3-banks-card-v2 .arch3-banks-tag {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.22em;
+  color: #0C0C0C; text-transform: uppercase; font-weight: 800;
+}
+.arch3-banks-card-v2 .arch3-banks-head h4 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(16px, 1.4vw, 22px);
+  letter-spacing: -0.025em;
+  color: #0C0C0C; margin: 0;
+}
+.arch3-banks-body {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.4vw;
+  align-items: stretch;
+}
+.arch3-banks-body .arch3-banks-logos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8vw;
+}
+.arch3-banks-body .arch3-banks-data {
+  display: flex; flex-direction: column;
+  gap: 0.8vh; justify-content: center;
+  border-left: 1px solid rgba(12,12,12,0.10);
+  padding-left: 1.2vw;
+}
+
+/* Hide the OLD arch3-banks layout to avoid conflict */
+.arch3-banks { display: none !important; }
+
 </style>
 </head>
 <body>
@@ -7524,41 +7592,43 @@ body.is-timeline .deck-mark-mini { display: none; }
     </div>
   </div>
 
-  <!-- Banks row BELOW the flow (does NOT invade hub space) -->
-  <div class="arch3-banks reveal">
-    <div class="arch3-banks-arrow">
-      <svg viewBox="0 0 20 50" preserveAspectRatio="none">
-        <defs>
-          <marker id="arch3a-bank" markerWidth="6" markerHeight="6" refX="3" refY="5" orient="auto">
-            <path d="M0,6 L3,0 L6,6 Z" fill="#0C0C0C"/>
-          </marker>
-        </defs>
-        <path id="arch3path-bank" d="M 10 50 L 10 6" stroke="#0C0C0C" stroke-width="1.5" fill="none" stroke-dasharray="4 4" marker-end="url(#arch3a-bank)"/>
-        <circle r="3" fill="#0C0C0C"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#arch3path-bank"/></animateMotion></circle>
-      </svg>
-    </div>
-    <div class="arch3-banks-card">
+  <!-- Banks row BELOW the flow, centered under Robbin with long vertical arrow -->
+  <div class="arch3-banks-v2">
+    <svg class="arch3-banks-long-arrow" viewBox="0 0 20 100" preserveAspectRatio="none">
+      <defs>
+        <marker id="arch3a-bank2" markerWidth="8" markerHeight="8" refX="4" refY="2" orient="auto">
+          <path d="M0,8 L4,0 L8,8 Z" fill="#0C0C0C"/>
+        </marker>
+      </defs>
+      <path id="arch3path-bank2" d="M 10 100 L 10 6" stroke="#0C0C0C" stroke-width="1.8" fill="none" stroke-dasharray="5 5" marker-end="url(#arch3a-bank2)"/>
+      <circle r="3.5" fill="#0C0C0C">
+        <animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#arch3path-bank2"/></animateMotion>
+      </circle>
+    </svg>
+    <div class="arch3-banks-card-v2">
       <div class="arch3-banks-head">
         <span class="arch3-banks-tag">Funding providers</span>
         <h4>Banks fuel the network</h4>
       </div>
-      <div class="arch3-banks-logos">
-        <div class="arch3-bank-slot">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAYAAABjyArgAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAABKtJREFUeAHtWEtoFEsUvdOT7yzy4G0e+AgEHnngUvGHvwkKLkRdiPgBURAX4hcUIaDMGAwqgp+NoKALRVwpggpB0BhBMaAoKIhZuFEDLgTxF5PMTLfndqoyd6q7M78WAtaBoqqr6966derWvdVNZGFhYWFhYWFRNxKJRB5VAcVV9StjSFa812MeqHezjXeBAv1uMpm8jnYGJY3nj+VkaiiFpqammTQd4TjObppYsKdKAX0H+V1bW9vfIEST4al6XIjPNmSnKkz2e+jsRLtf6Ky3MLknaDoDC89RKYnai7X3SvJ7hWg1BPu64c2DjY2NW6uUi9THepqbm/+j6YyGhoaFZBAJIvqU90oPHJVyIGq+IccL7kM5wgWbcZqKx3hSNwhZZZyMmr0Xtq+g8kioUikcihsg9DxNvWBeTEbKgOB5ZGwMyi45prW1dX3ImAzIz1F9BLvQ8VzPg3aGRC7BBvZhTTfERnLJw+YFFA7OD3nOGVQ8bSybpjigJo7yKvbe+yEyYQTvDFEv9foEQ98nqp1gn8SWlpYuMUeGgqfJDVnHdzJIg+Pcp4iQxRvEp5mqQKj753K5QXjBBaVYwp8olUrtDxHzyumH8V0wkpvmEf2Lagcv/MH4+PhU3hUWFhKe56VA2BbdgXC1I5/Pd1EELxjvFAqFFdjMpVQv4JFzOdOTETNR7kWNJ8ODIX+HJryJw0AGi3lq6kPWX1tHDHaVbBr6vwhzAh6M99dEvyvkf2ghdTJdIfOWJk5Yv3pmD75JMWEhFH4mgxD0hV6DQgiuhJwhELzBSKBVJTaUA7Apq9oakmAm5lPUO0PODHGTXq+uf2mKCzDqMgUJ0x4TAAieQ1Xcg1Vi43k+UI3xl21B2Fmu5o0kWJ0kjSyVJzhyndUi6gqyyHXdzRQetxIRXhx29fGMNpPyFaScxIasRP0I88yg6q5NGkxCN2LioQrGehWMSZYIABQDogg+StH3xQRIOYgjs1F2IjGaO87esY8mDE92dHSkQOhK2H0KpX1sbOwuEsoiqo1cD5v8BuUldKVr1GFC2l/xXRmOsoNUnqlkPGf6xRS84jwP+dB4aIjOomAM2wN9T1D7/zjUvTKOz2IODYt18hHzadQUIow1cnuGfgeH6gaZl0g4JWxYJhI0J8ABKgPHzOjquRHKDlPwC2/Si8NuESh7ITdI8f1r8EnBvFcjCKmX4FtUeovgdhb9A1T8YfUOa0r7ZDnOCAVvWd0kCS15cJzDKvTo48GhqAd1Dse5V91hdWzieHwxSpfug0wTxQcODR7i7jZlHMUJbNxZEutDKOQFHzHC0L/wZv9qh/fNFAwlJeuVpDhQlBUC7L082TFhQNYwoBULPuUPxiWcfj882HCFSv/iVSRXySA4UT8+Ns5R0StLdLBHg9w1IyMjz7gDnnxTjGO++CTflkINor1EeWtRo+dxnM0LA3qhFFV+cpdAsl9D8Xv09xhGcXj4ifIPxQQk0+O6jQX36PklYONDaQt/MMDr9eMATUE4ku/e9vb2E8PDw9tB9v+jo6OrUffhS/F1Z2fnmaGhoW96LOZYhyoL0jdhjsd4vgT7XpCFhYWFhYWFhYXFH45fJ+cKqh2Z2rwAAAAASUVORK5CYII=" alt="XP Inc" />
+      <div class="arch3-banks-body">
+        <div class="arch3-banks-logos">
+          <div class="arch3-bank-slot">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAYAAABjyArgAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAABKtJREFUeAHtWEtoFEsUvdOT7yzy4G0e+AgEHnngUvGHvwkKLkRdiPgBURAX4hcUIaDMGAwqgp+NoKALRVwpggpB0BhBMaAoKIhZuFEDLgTxF5PMTLfndqoyd6q7M78WAtaBoqqr6966derWvdVNZGFhYWFhYWFRNxKJRB5VAcVV9StjSFa812MeqHezjXeBAv1uMpm8jnYGJY3nj+VkaiiFpqammTQd4TjObppYsKdKAX0H+V1bW9vfIEST4al6XIjPNmSnKkz2e+jsRLtf6Ky3MLknaDoDC89RKYnai7X3SvJ7hWg1BPu64c2DjY2NW6uUi9THepqbm/+j6YyGhoaFZBAJIvqU90oPHJVyIGq+IccL7kM5wgWbcZqKx3hSNwhZZZyMmr0Xtq+g8kioUikcihsg9DxNvWBeTEbKgOB5ZGwMyi45prW1dX3ImAzIz1F9BLvQ8VzPg3aGRC7BBvZhTTfERnLJw+YFFA7OD3nOGVQ8bSybpjigJo7yKvbe+yEyYQTvDFEv9foEQ98nqp1gn8SWlpYuMUeGgqfJDVnHdzJIg+Pcp4iQxRvEp5mqQKj753K5QXjBBaVYwp8olUrtDxHzyumH8V0wkpvmEf2Lagcv/MH4+PhU3hUWFhKe56VA2BbdgXC1I5/Pd1EELxjvFAqFFdjMpVQv4JFzOdOTETNR7kWNJ8ODIX+HJryJw0AGi3lq6kPWX1tHDHaVbBr6vwhzAh6M99dEvyvkf2ghdTJdIfOWJk5Yv3pmD75JMWEhFH4mgxD0hV6DQgiuhJwhELzBSKBVJTaUA7Apq9oakmAm5lPUO0PODHGTXq+uf2mKCzDqMgUJ0x4TAAieQ1Xcg1Vi43k+UI3xl21B2Fmu5o0kWJ0kjSyVJzhyndUi6gqyyHXdzRQetxIRXhx29fGMNpPyFaScxIasRP0I88yg6q5NGkxCN2LioQrGehWMSZYIABQDogg+StH3xQRIOYgjs1F2IjGaO87esY8mDE92dHSkQOhK2H0KpX1sbOwuEsoiqo1cD5v8BuUldKVr1GFC2l/xXRmOsoNUnqlkPGf6xRS84jwP+dB4aIjOomAM2wN9T1D7/zjUvTKOz2IODYt18hHzadQUIow1cnuGfgeH6gaZl0g4JWxYJhI0J8ABKgPHzOjquRHKDlPwC2/Si8NuESh7ITdI8f1r8EnBvFcjCKmX4FtUeovgdhb9A1T8YfUOa0r7ZDnOCAVvWd0kCS15cJzDKvTo48GhqAd1Dse5V91hdWzieHwxSpfug0wTxQcODR7i7jZlHMUJbNxZEutDKOQFHzHC0L/wZv9qh/fNFAwlJeuVpDhQlBUC7L082TFhQNYwoBULPuUPxiWcfj882HCFSv/iVSRXySA4UT8+Ns5R0StLdLBHg9w1IyMjz7gDnnxTjGO++CTflkINor1EeWtRo+dxnM0LA3qhFFV+cpdAsl9D8Xv09xhGcXj4ifIPxQQk0+O6jQX36PklYONDaQt/MMDr9eMATUE4ku/e9vb2E8PDw9tB9v+jo6OrUffhS/F1Z2fnmaGhoW96LOZYhyoL0jdhjsd4vgT7XpCFhYWFhYWFhYXFH45fJ+cKqh2Z2rwAAAAASUVORK5CYII=" alt="XP Inc" />
+          </div>
+          <div class="arch3-bank-slot arch3-bank-confidential">
+            <span>Confidential</span>
+            <i>tier-1 bank · signed</i>
+          </div>
         </div>
-        <div class="arch3-bank-slot arch3-bank-confidential">
-          <span>Confidential</span>
-          <i>tier-1 bank · signed</i>
-        </div>
-      </div>
-      <div class="arch3-banks-data">
-        <div class="arch3-bank-stat">
-          <span class="arch3-bank-stat-tag">FIDC capacity</span>
-          <b class="arch3-bank-stat-num">R$ 500M</b>
-        </div>
-        <div class="arch3-bank-stat">
-          <span class="arch3-bank-stat-tag">Delinquency rate</span>
-          <b class="arch3-bank-stat-num">0.9%</b>
+        <div class="arch3-banks-data">
+          <div class="arch3-bank-stat">
+            <span class="arch3-bank-stat-tag">FIDC capacity</span>
+            <b class="arch3-bank-stat-num">R$ 500M</b>
+          </div>
+          <div class="arch3-bank-stat">
+            <span class="arch3-bank-stat-tag">Delinquency rate</span>
+            <b class="arch3-bank-stat-num">0.9%</b>
+          </div>
         </div>
       </div>
     </div>
