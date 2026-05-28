@@ -5974,6 +5974,38 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
 /* Force-hide leftover ROBBIN floating label */
 .tam2-col.is-br .tam2-supplier::before { content: none !important; display: none !important; }
 
+
+/* Aggressive: hide every possible source of "ROBBIN" label inside Brazil bar */
+.tam2-col.is-br .tam2-bar::before,
+.tam2-col.is-br .tam2-bar::after,
+.tam2-col.is-br .tam2-supplier::before,
+.tam2-col.is-br .tam2-supplier::after,
+.tam2-col.is-br .tam2-bank::before,
+.tam2-col.is-br .tam2-bank::after { content: none !important; display: none !important; }
+
+/* 2) Dashed card around potential countries — already has solid border; make it dashed */
+.tam2-card-potential {
+  border: 2px dashed rgba(12,12,12,0.30) !important;
+  background: #FAFAFA !important;
+}
+
+/* 3) Remove outlines/contornos of the bars/stacks (no border, no shadow) */
+.tam2-bar,
+.tam2-col.is-br .tam2-bar,
+.tam2-card-br {
+  border: none !important;
+  box-shadow: none !important;
+}
+.tam2-bank, .tam2-supplier {
+  border: none !important;
+  outline: none !important;
+}
+/* But keep Brazil card looking emphasized via a subtle background tone instead of border */
+.tam2-card-br {
+  background: #FFFFFF !important;
+  border: 2px solid #0C0C0C !important;
+}
+
 </style>
 </head>
 <body>
