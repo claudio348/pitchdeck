@@ -6358,17 +6358,16 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 26%; height: 26%;
-  border-radius: 50%;
-  background: #FAFAFA;
   display: flex; align-items: center; justify-content: center;
   z-index: 4;
-  padding: 0 5%;
-  box-shadow: 0 0 80px rgba(250,250,250,0.20);
 }
 .fw3-center-v2 img {
-  width: 85%; height: auto;
+  width: clamp(120px, 14vw, 180px);
+  height: auto;
+  filter: drop-shadow(0 0 30px rgba(250,250,250,0.40));
 }
+/* hide the white pulse ring too */
+.fw3-center-v2 .fw3-center-pulse { display: none; }
 
 .fw3-node-v2 {
   position: absolute;
@@ -6405,6 +6404,25 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
   letter-spacing: -0.025em;
   color: #0C0C0C;
 }
+
+
+/* Slide 9 — up arrow chips on each node */
+.fw3-node-v2 .fw3-arrow-up {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 22px; height: 22px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: #0C0C0C;
+  color: #FAFAFA;
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: 13px;
+  border: 2px solid #FAFAFA;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+.fw3-node-v2 { position: absolute; /* keep absolute for arrow positioning */ }
 
 </style>
 </head>
@@ -7138,44 +7156,29 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
       </div>
 
       <!-- 6 minimal nodes -->
-      <div class="fw3-node-v2 fw3-n1" style="--a:0deg">
-        <span class="fw3-num">01</span>
-        <b>Suppliers</b>
-      </div>
-      <div class="fw3-node-v2 fw3-n2" style="--a:60deg">
-        <span class="fw3-num">02</span>
-        <b>Trust &amp; Data</b>
-      </div>
-      <div class="fw3-node-v2 fw3-n3" style="--a:120deg">
-        <span class="fw3-num">03</span>
-        <b>SMEs</b>
-      </div>
-      <div class="fw3-node-v2 fw3-n4" style="--a:180deg">
-        <span class="fw3-num">04</span>
-        <b>Funding</b>
-      </div>
-      <div class="fw3-node-v2 fw3-n5" style="--a:240deg">
-        <span class="fw3-num">05</span>
-        <b>Credit Costs</b>
-      </div>
-      <div class="fw3-node-v2 fw3-n6" style="--a:300deg">
-        <span class="fw3-num">06</span>
-        <b>Transactions</b>
-      </div>
+      <div class="fw3-node-v2 fw3-n1" style="--a:0deg"><span class="fw3-arrow-up">↑</span><span class="fw3-num">01</span><b>Suppliers</b></div>
+      <div class="fw3-node-v2 fw3-n2" style="--a:60deg"><span class="fw3-arrow-up">↑</span><span class="fw3-num">02</span><b>Trust &amp; Data</b></div>
+      <div class="fw3-node-v2 fw3-n3" style="--a:120deg"><span class="fw3-arrow-up">↑</span><span class="fw3-num">03</span><b>SMEs</b></div>
+      <div class="fw3-node-v2 fw3-n4" style="--a:180deg"><span class="fw3-arrow-up">↑</span><span class="fw3-num">04</span><b>Funding</b></div>
+      <div class="fw3-node-v2 fw3-n5" style="--a:240deg"><span class="fw3-arrow-up">↑</span><span class="fw3-num">05</span><b>Credit Costs</b></div>
+      <div class="fw3-node-v2 fw3-n6" style="--a:300deg"><span class="fw3-arrow-up">↑</span><span class="fw3-num">06</span><b>Transactions</b></div>
 
       <!-- momentum arrows -->
       <svg class="fw3-arrows" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet">
         <defs>
-          <marker id="fw3arrow2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-            <path d="M0,0 L6,3 L0,6 Z" fill="#FAFAFA"/>
+          <marker id="fw3arrowEnd" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#FAFAFA"/>
+          </marker>
+          <marker id="fw3chev" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,0 L5,3 L0,6" fill="none" stroke="#FAFAFA" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
           </marker>
         </defs>
-        <path d="M 460 200 A 240 240 0 0 1 460 400" stroke="#FAFAFA" stroke-width="1.5" fill="none" stroke-dasharray="4 5" marker-end="url(#fw3arrow2)" opacity="0.55"/>
-        <path d="M 460 400 A 240 240 0 0 1 300 540" stroke="#FAFAFA" stroke-width="1.5" fill="none" stroke-dasharray="4 5" marker-end="url(#fw3arrow2)" opacity="0.55"/>
-        <path d="M 300 540 A 240 240 0 0 1 140 400" stroke="#FAFAFA" stroke-width="1.5" fill="none" stroke-dasharray="4 5" marker-end="url(#fw3arrow2)" opacity="0.55"/>
-        <path d="M 140 400 A 240 240 0 0 1 140 200" stroke="#FAFAFA" stroke-width="1.5" fill="none" stroke-dasharray="4 5" marker-end="url(#fw3arrow2)" opacity="0.55"/>
-        <path d="M 140 200 A 240 240 0 0 1 300 60"  stroke="#FAFAFA" stroke-width="1.5" fill="none" stroke-dasharray="4 5" marker-end="url(#fw3arrow2)" opacity="0.55"/>
-        <path d="M 300 60  A 240 240 0 0 1 460 200" stroke="#FAFAFA" stroke-width="1.5" fill="none" stroke-dasharray="4 5" marker-end="url(#fw3arrow2)" opacity="0.55"/>
+        <path d="M 460 200 A 240 240 0 0 1 460 400" stroke="#FAFAFA" stroke-width="1.8" fill="none" stroke-dasharray="4 5" marker-end="url(#fw3arrowEnd)" marker-mid="url(#fw3chev)" opacity="0.7"/>
+        <path d="M 460 400 A 240 240 0 0 1 300 540" stroke="#FAFAFA" stroke-width="1.8" fill="none" stroke-dasharray="4 5" marker-end="url(#fw3arrowEnd)" marker-mid="url(#fw3chev)" opacity="0.7"/>
+        <path d="M 300 540 A 240 240 0 0 1 140 400" stroke="#FAFAFA" stroke-width="1.8" fill="none" stroke-dasharray="4 5" marker-end="url(#fw3arrowEnd)" marker-mid="url(#fw3chev)" opacity="0.7"/>
+        <path d="M 140 400 A 240 240 0 0 1 140 200" stroke="#FAFAFA" stroke-width="1.8" fill="none" stroke-dasharray="4 5" marker-end="url(#fw3arrowEnd)" marker-mid="url(#fw3chev)" opacity="0.7"/>
+        <path d="M 140 200 A 240 240 0 0 1 300 60"  stroke="#FAFAFA" stroke-width="1.8" fill="none" stroke-dasharray="4 5" marker-end="url(#fw3arrowEnd)" marker-mid="url(#fw3chev)" opacity="0.7"/>
+        <path d="M 300 60  A 240 240 0 0 1 460 200" stroke="#FAFAFA" stroke-width="1.8" fill="none" stroke-dasharray="4 5" marker-end="url(#fw3arrowEnd)" marker-mid="url(#fw3chev)" opacity="0.7"/>
       </svg>
     </div>
   </div>
