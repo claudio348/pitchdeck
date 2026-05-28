@@ -4899,21 +4899,12 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
 .rev2-pillar.is-hero .rev2-bignum .mini-bar::after { background: #FAFAFA; }
 .slide:not(.in-view) .rev2-bignum .mini-bar::after { width: 0 !important; }
 
-.rev2-equity {
+.rev2-equity-section {
   margin-top: auto;
-  padding-top: 1.4vh;
   border-top: 1px solid rgba(12,12,12,0.10);
-  font-family: var(--font-sans);
-  font-size: clamp(12px, 0.95vw, 15px);
-  line-height: 1.4;
+  padding-top: 1.4vh;
 }
-.rev2-pillar.is-hero .rev2-equity { border-top-color: rgba(250,250,250,0.18); }
-.rev2-equity b {
-  display: block;
-  font-weight: 800; font-size: clamp(14px, 1.15vw, 18px);
-  letter-spacing: -0.02em;
-  margin-bottom: 4px;
-}
+.rev2-pillar.is-hero .rev2-equity-section { border-top-color: rgba(250,250,250,0.18); }
 
 
 
@@ -8146,9 +8137,12 @@ body.is-timeline .deck-mark-mini { display: none; }
         <div class="rev2-section-lbl">Gross Margin (2028)</div>
         <div class="rev2-bignum"><b>66%</b><span class="mini-bar" style="--w:66%"></span></div>
       </div>
-      <div class="rev2-equity">
-        <b>Network Effects</b>
-        Earnings Quality
+      <div class="rev2-section rev2-equity-section">
+        <div class="rev2-section-lbl">Value for the Equity</div>
+        <div class="rev2-chips">
+          <span class="rev2-chip">Network Effects</span>
+          <span class="rev2-chip">Earnings Quality</span>
+        </div>
       </div>
     </div>
 
@@ -8181,9 +8175,12 @@ body.is-timeline .deck-mark-mini { display: none; }
         <div class="rev2-section-lbl">Gross Margin (2028)</div>
         <div class="rev2-bignum"><b>31%</b><span class="mini-bar" style="--w:31%"></span></div>
       </div>
-      <div class="rev2-equity">
-        <b>Massive TAM</b>
-        Cross-Sell
+      <div class="rev2-section rev2-equity-section">
+        <div class="rev2-section-lbl">Value for the Equity</div>
+        <div class="rev2-chips">
+          <span class="rev2-chip">Massive TAM</span>
+          <span class="rev2-chip">Cross-Sell</span>
+        </div>
       </div>
     </div>
 
@@ -8198,18 +8195,13 @@ body.is-timeline .deck-mark-mini { display: none; }
       <div class="rev2-section">
         <div class="rev2-section-lbl">Revenue Type</div>
         <div class="rev2-chips">
-          <span class="rev2-chip">Network Fees</span>
-          <span class="rev2-chip">SaaS<sup>2</sup></span>
-          <span class="rev2-chip">Financial Interest</span>
+          <span class="rev2-chip">Mixed</span>
         </div>
       </div>
       <div class="rev2-section">
         <div class="rev2-section-lbl">Cost Structure</div>
         <div class="rev2-chips">
-          <span class="rev2-chip">Cloud</span>
-          <span class="rev2-chip">Tokens</span>
-          <span class="rev2-chip">Funding</span>
-          <span class="rev2-chip">Credit</span>
+          <span class="rev2-chip">Mixed</span>
         </div>
       </div>
       <div class="rev2-section">
@@ -8220,9 +8212,12 @@ body.is-timeline .deck-mark-mini { display: none; }
         <div class="rev2-section-lbl">Gross Margin (2028)</div>
         <div class="rev2-bignum"><b>46%</b><span class="mini-bar" style="--w:46%"></span></div>
       </div>
-      <div class="rev2-equity">
-        <b>100y Compounder</b>
-        Moats &amp; Economics
+      <div class="rev2-section rev2-equity-section">
+        <div class="rev2-section-lbl">Value for the Equity</div>
+        <div class="rev2-chips">
+          <span class="rev2-chip">100y Compounder</span>
+          <span class="rev2-chip">Moats &amp; Economics</span>
+        </div>
       </div>
     </div>
   </div>
