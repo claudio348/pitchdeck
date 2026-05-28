@@ -7224,11 +7224,11 @@ body.is-timeline .deck-mark-mini { display: none; }
 
 /* ============ DEMO · APP slide ============ */
 .demo-app-slide { padding: 6vh 6vw; }
-.demo-app-slide .chapter-mark.dark-mark,
-.demo-app-slide .chapter-mark.dark-mark .chapter-num,
-.demo-app-slide .chapter-mark.dark-mark .chapter-divider,
-.demo-app-slide .chapter-mark.dark-mark .chapter-year { color: #FAFAFA; }
-.demo-app-slide .chapter-mark.dark-mark .chapter-divider { background: #FAFAFA; }
+.demo-app-slide .chapter-mark.light-mark,
+.demo-app-slide .chapter-mark.light-mark .chapter-num,
+.demo-app-slide .chapter-mark.light-mark .chapter-divider,
+.demo-app-slide .chapter-mark.light-mark .chapter-year { color: #0C0C0C; }
+.demo-app-slide .chapter-mark.light-mark .chapter-divider { background: #0C0C0C; }
 .demo-app-grid {
   flex: 1;
   display: grid;
@@ -7242,7 +7242,7 @@ body.is-timeline .deck-mark-mini { display: none; }
 .demo-app-eyebrow {
   font-family: var(--font-mono);
   font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
-  color: rgba(250,250,250,0.55);
+  color: rgba(12,12,12,0.55);
 }
 .demo-app-slide h1 {
   font-family: var(--font-sans); font-weight: 700;
@@ -7253,7 +7253,7 @@ body.is-timeline .deck-mark-mini { display: none; }
   font-family: var(--font-sans);
   font-size: clamp(14px, 1.05vw, 18px);
   line-height: 1.5;
-  color: rgba(250,250,250,0.70);
+  color: rgba(12,12,12,0.70);
   max-width: 38ch;
 }
 .demo-app-points {
@@ -7262,10 +7262,10 @@ body.is-timeline .deck-mark-mini { display: none; }
 }
 .demo-app-points li {
   padding: 1.4vh 0;
-  border-top: 1px solid rgba(250,250,250,0.12);
+  border-top: 1px solid rgba(12,12,12,0.12);
   display: flex; flex-direction: column; gap: 4px;
 }
-.demo-app-points li:last-child { border-bottom: 1px solid rgba(250,250,250,0.12); }
+.demo-app-points li:last-child { border-bottom: 1px solid rgba(12,12,12,0.12); }
 .demo-app-points b {
   font-family: var(--font-sans);
   font-size: clamp(16px, 1.3vw, 22px);
@@ -7274,7 +7274,7 @@ body.is-timeline .deck-mark-mini { display: none; }
 .demo-app-points span {
   font-family: var(--font-sans);
   font-size: clamp(12px, 0.9vw, 15px);
-  color: rgba(250,250,250,0.58);
+  color: rgba(12,12,12,0.58);
 }
 
 .demo-app-phone {
@@ -7288,11 +7288,11 @@ body.is-timeline .deck-mark-mini { display: none; }
   aspect-ratio: 1080 / 2008;
   background: #000;
   border-radius: 36px;
-  border: 2px solid rgba(250,250,250,0.18);
+  border: 2px solid rgba(12,12,12,0.16);
   box-shadow:
-    0 30px 80px -20px rgba(0,0,0,0.7),
-    0 0 0 6px rgba(250,250,250,0.04),
-    inset 0 0 0 1px rgba(255,255,255,0.06);
+    0 30px 80px -20px rgba(12,12,12,0.30),
+    0 0 0 6px rgba(12,12,12,0.04),
+    inset 0 0 0 1px rgba(0,0,0,0.10);
   overflow: hidden;
   z-index: 2;
 }
@@ -7314,7 +7314,7 @@ body.is-timeline .deck-mark-mini { display: none; }
   position: absolute;
   width: 70%; height: 70%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(250,250,250,0.10), rgba(250,250,250,0) 60%);
+  background: radial-gradient(circle, rgba(12,12,12,0.08), rgba(12,12,12,0) 60%);
   filter: blur(40px);
   z-index: 1;
   pointer-events: none;
@@ -8482,8 +8482,8 @@ body.is-timeline .deck-mark-mini { display: none; }
 </section>
 
 <!-- ============ SLIDE 16: TBD ============ -->
-<section class="slide demo-app-slide" data-num="16" style="background:#0C0C0C;color:#FAFAFA;">
-  <div class="chapter-mark dark-mark">
+<section class="slide demo-app-slide" data-num="16" style="background:#FAFAFA;color:#0C0C0C;">
+  <div class="chapter-mark light-mark">
     <span class="chapter-num">15</span>
     <span class="chapter-divider"></span>
     <span class="chapter-year">Demo · App</span>
