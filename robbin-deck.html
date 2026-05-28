@@ -6037,6 +6037,57 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
 .tam2-bar { border: 0 !important; box-shadow: none !important; }
 .tam2-bank, .tam2-supplier { border: 0 !important; outline: 0 !important; }
 
+
+/* Slide 9 — bottom callout (gross) emphasizing 500K pipeline */
+.traction-callout {
+  background: #0C0C0C;
+  color: #FAFAFA;
+  padding: 4vh 4vw;
+  margin: 2vh -6vw -8vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3vw;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+.traction-callout::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(250,250,250,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(250,250,250,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(ellipse at 25% 50%, #000 50%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse at 25% 50%, #000 50%, transparent 90%);
+  pointer-events: none;
+}
+.traction-callout > * { position: relative; z-index: 1; }
+.traction-callout-num {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: clamp(72px, 10vw, 180px);
+  letter-spacing: -0.06em;
+  line-height: 0.85;
+  color: #FAFAFA;
+}
+.traction-callout-text {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(20px, 2.2vw, 38px);
+  letter-spacing: -0.025em;
+  color: #FAFAFA;
+  max-width: 42ch;
+  line-height: 1.15;
+}
+.traction-callout-text b {
+  background: #FAFAFA;
+  color: #0C0C0C;
+  padding: 0 0.18em;
+  font-weight: 900;
+}
+
 </style>
 </head>
 <body>
@@ -6688,28 +6739,28 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
     <div class="kpi">
       <div class="kpi-num">— 01</div>
       <div class="kpi-tag">Suppliers</div>
-      <div class="kpi-stat"><span class="cnt" data-to="8">0</span></div>
+      <div class="kpi-stat"><span class="cnt" data-to="8">8</span></div>
       <div class="kpi-sub">live brands</div>
       <div class="kpi-foot">8 anchor brands live + pipeline.</div>
     </div>
     <div class="kpi">
       <div class="kpi-num">— 02</div>
       <div class="kpi-tag">Funding partners</div>
-      <div class="kpi-stat"><span class="cnt" data-to="2">0</span></div>
+      <div class="kpi-stat"><span class="cnt" data-to="2">2</span></div>
       <div class="kpi-sub">tier-1 banks</div>
       <div class="kpi-foot">Both publicly listed — confidential.</div>
     </div>
     <div class="kpi">
       <div class="kpi-num">— 03</div>
       <div class="kpi-tag">Network participants</div>
-      <div class="kpi-stat">+<span class="cnt" data-to="5">0</span>K</div>
+      <div class="kpi-stat">+<span class="cnt" data-to="5">5</span>K</div>
       <div class="kpi-sub">Suppliers + SME buyers</div>
       <div class="kpi-foot">Including waitlist to participate.</div>
     </div>
     <div class="kpi">
       <div class="kpi-num">— 04</div>
       <div class="kpi-tag">TPV processed</div>
-      <div class="kpi-stat">+USD <span class="cnt" data-to="34">0</span><span class="unit">M</span></div>
+      <div class="kpi-stat">+USD <span class="cnt" data-to="34">34</span><span class="unit">M</span></div>
       <div class="kpi-sub">in transactions</div>
       <div class="kpi-foot">Growing weekly since Q1/26.</div>
     </div>
@@ -6734,8 +6785,8 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
 
   <!-- BIG callout: 500k pipeline -->
   <div class="traction-callout reveal">
-    <div class="traction-callout-num">Up to +500K</div>
-    <div class="traction-callout-text">clients ready to be deployed across the network.</div>
+    <div class="traction-callout-num">+500K</div>
+    <div class="traction-callout-text"><b>Up to +500K clients</b><br/>ready to be deployed across the network.</div>
   </div>
 </section>
 
