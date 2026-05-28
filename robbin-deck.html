@@ -4457,7 +4457,6 @@ html, body {
 
 <!-- ============ SLIDE 1: COVER ============ -->
 <section class="slide cover5 active" id="cover" data-num="01">
-  <div class="cover5-mark-tl">Pitch v.TRIAXIS</div>
   <div class="cover5-badge">SP · MAY 2026</div>
 
   <div class="cover5-center">
@@ -5641,14 +5640,16 @@ html, body {
   counter.textContent = '01';
   slides[0].querySelectorAll('.cnt').forEach(animateCount);
 
-  // Cover toggle — flip dark/light every 2.2s
+  // Cover toggle — flip dark/light every 2s
   const cover = document.getElementById('cover');
   if (cover) {
-    let dark = false;
+    // Start in DARK state immediately (black bg + white logo + white text)
+    cover.classList.add('is-dark');
+    let dark = true;
     setInterval(() => {
       dark = !dark;
       cover.classList.toggle('is-dark', dark);
-    }, 2200);
+    }, 2000);
   }
 })();
 </script>
