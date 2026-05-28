@@ -5879,6 +5879,39 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
 }
 
 
+
+.tam2-col.is-br {
+  position: relative;
+  z-index: 2;
+}
+.tam2-col.is-br .tam2-bar {
+  box-shadow: 0 12px 28px -10px rgba(12,12,12,0.40);
+  border: 1px solid #0C0C0C;
+}
+.tam2-col.is-br .tam2-supplier { background: #0C0C0C !important; }
+.tam2-col.is-br .tam2-supplier span {
+  color: #FAFAFA !important;
+  font-size: clamp(16px, 1.5vw, 22px) !important;
+  font-weight: 900 !important;
+}
+.tam2-col.is-br .tam2-bar-name { font-weight: 900; }
+
+
+
+/* Slide 8 — gray out potential countries, emphasize Brazil */
+.tam2-col.is-potential .tam2-bar { opacity: 0.30; filter: saturate(0.3); }
+.tam2-col.is-potential .tam2-bar-name { color: #B0B0B0; font-weight: 500; }
+.tam2-col.is-potential .tam2-flag img { opacity: 0.45; filter: grayscale(1); }
+.tam2-col.is-potential .tam2-supplier { background: #6C6C6C !important; }
+.tam2-col.is-potential .tam2-supplier span { color: rgba(250,250,250,0.7) !important; font-weight: 600 !important; }
+.tam2-col.is-potential .tam2-bank span { color: #B0B0B0 !important; }
+.tam2-col.is-potential .tam2-tag {
+  background: transparent !important;
+  color: #B0B0B0 !important;
+  border-color: #D0D0D0 !important;
+}
+
+
 </style>
 </head>
 <body>
@@ -6517,10 +6550,7 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
         </div>
     </div>
 
-    <div class="tam2-foot">
-      <b>Current:</b> Brazil's 71% supplier-financed share is where Robbin starts.<br/>
-      <b>Potential:</b> the same opportunity exists across every emerging market.
-    </div>
+    
   </div>
 </section>
 
