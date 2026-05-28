@@ -5642,6 +5642,16 @@ html, body {
   progress.style.width = '0%';
   counter.textContent = '01';
   slides[0].querySelectorAll('.cnt').forEach(animateCount);
+
+  // Cover toggle — flip dark/light every 2.2s
+  const cover = document.getElementById('cover');
+  if (cover) {
+    let dark = false;
+    setInterval(() => {
+      dark = !dark;
+      cover.classList.toggle('is-dark', dark);
+    }, 2200);
+  }
 })();
 </script>
 </body>
