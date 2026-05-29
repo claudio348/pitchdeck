@@ -9312,9 +9312,11 @@ img[alt="CFA Institute"] { filter: grayscale(1); }
     slides[cur].classList.add('active');
     if (cur === 0) {
       counter.parentElement.style.visibility = 'hidden';
+      document.body.classList.add('is-cover');
     } else {
       counter.parentElement.style.visibility = 'visible';
       counter.textContent = String(cur).padStart(2, '0');
+      document.body.classList.remove('is-cover');
     }
     progress.style.width = ((cur) / (slides.length - 1) * 100) + '%';
     // toggle deck-mark dark/light based on slide theme
