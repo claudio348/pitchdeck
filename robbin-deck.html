@@ -6934,14 +6934,17 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
 }
 /* Robbin side: events compressed at top to show "faster" — empty space below */
 .tl4-half.tl4-robbin .tl4-track {
+  flex: 0 1 auto;
   justify-content: flex-start;
   gap: 5vh;
+  align-self: flex-start;
+  width: 100%;
 }
-/* Robbin: line stops where the last event ends (~40% of container height) */
+/* Robbin: line spans only the events container (top of first dot to bottom of last dot) */
 .tl4-half.tl4-robbin .tl4-line {
-  bottom: auto;
-  height: 48%;
   top: 12px;
+  bottom: 12px;
+  height: auto;
 }
 .tl4-line {
   position: absolute;
