@@ -4900,41 +4900,17 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
 .slide:not(.in-view) .rev2-bignum .mini-bar::after { width: 0 !important; }
 
 .rev2-equity-section {
-  margin-top: auto;
-  padding: 2.4vh 1.4vw 2vh;
-  background: linear-gradient(135deg, rgba(12,12,12,0.10), rgba(12,12,12,0.03));
-  border: 1.5px solid #0C0C0C;
-  border-radius: 10px;
+  margin-top: 1.5vh;
+  padding: 2vh 0 0;
   position: relative;
-  overflow: hidden;
-  box-shadow: 0 14px 32px -12px rgba(12,12,12,0.22);
-}
-.rev2-equity-section::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; bottom: 0;
-  width: 5px;
-  background: #0C0C0C;
-}
-.rev2-equity-section::after {
-  content: "★ EQUITY";
-  position: absolute;
-  top: 9px; right: 10px;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  font-weight: 900;
-  letter-spacing: 0.28em;
-  color: #0C0C0C;
-  background: rgba(12,12,12,0.08);
-  padding: 3px 7px;
-  border-radius: 3px;
+  border-top: 2px solid #0C0C0C;
 }
 .rev2-equity-section .rev2-section-lbl {
   font-weight: 900;
   color: #0C0C0C;
-  margin-bottom: 1.3vh;
-  font-size: 11px;
-  letter-spacing: 0.26em;
+  margin-bottom: 1.4vh;
+  font-size: clamp(11px, 0.85vw, 13px);
+  letter-spacing: 0.24em;
 }
 .rev2-equity-section .rev2-chips {
   gap: 8px;
@@ -4944,21 +4920,12 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
   color: #FAFAFA;
   border: 1.5px solid #0C0C0C;
   font-weight: 800;
-  font-size: clamp(12px, 0.95vw, 14px);
-  padding: 6px 12px;
+  font-size: clamp(12px, 1vw, 15px);
+  padding: 7px 13px;
   letter-spacing: -0.005em;
 }
 .rev2-pillar.is-hero .rev2-equity-section {
-  background: linear-gradient(135deg, rgba(250,250,250,0.16), rgba(250,250,250,0.04));
-  border-color: #FAFAFA;
-  box-shadow: 0 0 0 1px rgba(250,250,250,0.18), 0 20px 40px -12px rgba(250,250,250,0.22);
-}
-.rev2-pillar.is-hero .rev2-equity-section::before {
-  background: #FAFAFA;
-}
-.rev2-pillar.is-hero .rev2-equity-section::after {
-  color: #FAFAFA;
-  background: rgba(250,250,250,0.12);
+  border-top-color: #FAFAFA;
 }
 .rev2-pillar.is-hero .rev2-equity-section .rev2-section-lbl { color: #FAFAFA; }
 .rev2-pillar.is-hero .rev2-equity-section .rev2-chip {
@@ -6727,15 +6694,24 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
 /* Orbit container */
 .fw4-orbit {
   position: relative;
-  width: 70vmin;
-  height: 70vmin;
+  width: 70vmin !important;
+  height: 70vmin !important;
+  min-width: 70vmin;
+  min-height: 70vmin;
+  max-width: 70vmin;
+  max-height: 70vmin;
   margin: 0 auto;
   flex-shrink: 0;
+  flex-grow: 0;
   align-self: center;
+  aspect-ratio: 1 !important;
 }
 .fw4-rings, .fw4-arrows {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 70vmin;
+  height: 70vmin;
+  transform: translate(-50%, -50%);
   pointer-events: none;
 }
 
@@ -6964,7 +6940,8 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
 /* Robbin: line stops where the last event ends (~40% of container height) */
 .tl4-half.tl4-robbin .tl4-line {
   bottom: auto;
-  height: 60%;
+  height: 48%;
+  top: 12px;
 }
 .tl4-line {
   position: absolute;
