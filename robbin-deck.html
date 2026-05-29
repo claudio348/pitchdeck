@@ -41,7 +41,16 @@ html, body {
 }
 
 /* ============ DECK ============ */
-.deck { position: fixed; inset: 0; container-type: size; container-name: deck; }
+.deck {
+  position: fixed;
+  top: 50%; left: 50%;
+  width: 1600px;
+  height: 900px;
+  transform: translate(-50%, -50%) scale(var(--deck-scale, 1));
+  transform-origin: center center;
+  overflow: hidden;
+  background: #FAFAFA;
+}
 .slide {
   position: absolute; inset: 0;
   display: none;
@@ -58,7 +67,7 @@ html, body {
 
 /* ============ CHROME ============ */
 .deck-meta {
-  position: fixed; bottom: 2.5vh; left: 50%;
+  position: absolute; bottom: 2.5vh; left: 50%;
   transform: translateX(-50%);
   display: flex; align-items: center; gap: 14px;
   z-index: 100;
@@ -79,7 +88,7 @@ html, body {
 .progress-fill { height: 100%; background: var(--accent); width: 0%; transition: width 0.5s ease; }
 
 .slide-counter {
-  position: fixed; bottom: 3vh; right: 4vw; z-index: 90;
+  position: absolute; bottom: 3vh; right: 4vw; z-index: 90;
   font-family: var(--font-mono); font-size: 10px;
   font-weight: 500; letter-spacing: 0.1em;
   color: var(--muted); pointer-events: none; opacity: 0.7;
@@ -95,9 +104,9 @@ html, body {
 
 /* Mini Robbin logo at top — minimalist, hidden on cover */
 .deck-mark-mini {
-  position: fixed;
-  top: 1vh;
-  left: 1vw;
+  position: absolute;
+  top: 16px;
+  left: 20px;
   z-index: 90;
   opacity: 0.7;
   transition: opacity 0.25s, filter 0.25s;
@@ -8154,6 +8163,7 @@ img[alt="CFA Institute"] { filter: grayscale(1); }
 </style>
 </head>
 <body>
+<div class="deck" id="deck">
 <div class="deck-mark-mini"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTg2IiBoZWlnaHQ9IjE1OSIgdmlld0JveD0iMCAwIDE4NiAxNTkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE4NS41ODkgNDMuMDQyN0MxODUuNTg5IDQzLjA0MzYgMTg1LjU5IDQzLjA0NDUgMTg1LjU5MSA0My4wNDM4QzE4NS41OTEgNDMuMDQzMiAxODUuNTkxIDQzLjA0MjIgMTg1LjU5IDQzLjA0MjJIMTgwLjA5MkMxNzkuNjQ0IDQzLjA0MjIgMTc5LjI2NCA0Mi43MDczIDE3OS4yMTcgNDIuMjY0NEMxNzguOTc3IDQwLjAzMzQgMTc4LjA5NCAzMy41MTU5IDE3NS41NDggMjkuNDgwN0MxNzMuNDQ2IDI2LjE1MDQgMTcwLjEwMiAyMi4xNDQ5IDE2NS4yNDMgMTkuMjQ0QzE1Ni41NjEgMTQuMDY1NyAxNDIuNzU2IDYuMDYxOTcgMTQxLjcwMiA1LjQ3MzY5QzE0MS42OTYgNS40NzAzMSAxNDEuNzA2IDUuNDc5ODggMTQxLjcwNiA1LjQ3OTg4QzE0MS4xMSA1LjEyODc1IDE0MC4zNTEgNS4yMDk3OCAxMzkuODQ1IDUuNjc0MzVMMTMzLjU3NCAxMS40Mjc0QzEzMy4yMTEgMTEuNzYyMyAxMzIuNjQ4IDExLjcyOTkgMTMyLjMyIDExLjM1OTlDMTMxLjgyMyAxMC43OTgxIDEzMS4zNDcgMTAuMjE0NyAxMzAuODgzIDkuNjIwNDZDMTI5LjQ0NSA3LjcxNjI4IDEyNy42OTEgNi4yMjgwNSAxMjUuNjA5IDUuMTAxNzRDMTIyLjYyIDMuMzY3NzIgMTE5LjQ1NSAxLjg3Njc5IDExNi4xMjIgMC44Mzk2MTRDMTE0Ljk4OCAwLjQ5NjU5MSAxMTMuODMyIDAuMTg4NjgxIDExMi41OTQgMC4wMDc3MTYwN0MxMTIuMzg5IC0wLjAxOTI5MzYgMTEyLjE3OSAwLjAyMzkyMTkgMTEyLjAwMSAwLjE0ODE2NkMxMTEuNjMgMC40MDIwNTcgMTExLjUzOSAwLjkxNTI0MSAxMTEuODAyIDEuMjc0NDdDMTEyLjUyIDIuMjg3MzMgMTEzLjMyMSAzLjE2Nzg1IDExNC4xNDEgNC4wMTMyNUMxMTYuNTcgNi40OTAwNCAxMTkuMzQ2IDguNjEzIDEyMi4yNjIgMTAuNDY1OUMxMjMuMjM0IDExLjA3NjMgMTI0LjE5NiAxMS42ODk0IDEyNS4yNzggMTIuMTI0M0MxMjYuNjA2IDEyLjY3OCAxMjguMDg3IDEyLjk2NDMgMTI5LjU0OSAxMy4yNjk1QzEzMC4yMzggMTMuNDE4IDEzMC40ODEgMTQuMjcxNSAxMjkuOTYyIDE0Ljc0NjlMMTI0Ljk2OSAxOS4zMzU4QzEyNC4zMDggMTkuOTQ2MyAxMjQuNzQ1IDIxLjA0MjkgMTI1LjY1IDIxLjA0MjlIMTM0LjczOEMxMzUuMzg4IDIxLjA0MjkgMTM1LjYzNyAyMS44Njk0IDEzNS4wOTYgMjIuMjIwNUMxMzUuMDM2IDIyLjI2NTEgMTM1LjAyOCAyMi4yNTUzIDEzNC45NzUgMjIuMzA4QzEzMy4wOTkgMjQuMTY0IDAuNDYxMjg5IDE1NC40NjMgMC40NjEyODkgMTU0LjQ2M0MtMC4xMTUyNjQgMTU1LjAzNSAtMC4xMTUyNjQgMTU1LjgzNyAwLjI2MTgxOCAxNTYuNDA3QzAuNTI2ODY5IDE1Ni44MTUgMC45ODg2NTggMTU3LjA5NiAxLjU2NTIxIDE1Ny4wOTZIMjQuOTA2MUMyNS4zMzIzIDE1Ny4wOTYgMjUuNzI1OCAxNTYuODggMjUuOTU4MSAxNTYuNTI2QzMxLjc5NzQgMTQ3LjcxIDQwLjQ2MjEgMTQwLjg4MiA1MC42NzMzIDEzNy4yOThDNTAuOTIyIDEzNy4yMDkgNTEuMTcwNiAxMzcuMTIgNTEuNDE5MyAxMzcuMDM2QzU0Ljc2NjYgMTM1LjkwMiA1OC4yNDUgMTM1LjE0OCA2MS42MzA2IDEzNC44MDVDNjMuNDQ3NyAxMzQuNjAyIDY1LjI5MjEgMTM0LjQ5NyA2Ny4xNjExIDEzNC40OTdIMTIyLjk2OUMxMjQuMDkgMTM0LjQ5NyAxMjUuMjEgMTM0LjQxMSAxMjYuMzE3IDEzNC4yMzhDMTMxLjczIDEzMy4zNzkgMTQzLjcxMiAxMzAuNjEzIDE1Mi4xNTggMTIyLjI2NEMxNjMuMzg1IDExMS4xNjMgMTY2LjUwMyAxMDEuMjk5IDE2Ny4xMjkgODcuMTE5M0MxNjcuNTYxIDc3LjIzNjUgMTY3LjM4NiA2Ny4wNTExIDE2Ny4yNDQgNjEuNzg5N0MxNjcuMTg0IDU5LjQ2MTQgMTY3LjMwNCA1Ny4xMzU5IDE2Ny42MSA1NC44MjkzQzE2Ny42OTIgNTQuMjAyNiAxNjguMDk2IDUzLjY1OTcgMTY4LjY2NyA1My4zNzM0TDE4NS45ODggNDQuNjg0NEMxODYuODE0IDQ0LjI3NCAxODYuNTE2IDQzLjA0MjcgMTg1LjU5IDQzLjA0MjJDMTg1LjU5IDQzLjA0MjIgMTg1LjU4OSA0My4wNDI0IDE4NS41ODkgNDMuMDQyN1pNMTU5LjYgMzkuNjc2OEMxNTkuNiAzOS42NzY4IDE1OS42IDM5LjY3NzQgMTU5LjYgMzkuNjc3NkMxNTguNjYzIDQwLjI4NDggMTU3LjQ2NiA0MC41NTczIDE1Ni4yMTUgNDAuMzA2MkMxNTQuNDAxIDM5Ljk0NDIgMTUyLjk4IDM4LjQ1NiAxNTIuNzAxIDM2LjY0NjRDMTUyLjM5IDM0LjYyMDYgMTUzLjQ2OSAzMi43OTIxIDE1NS4xNDQgMzEuOTczN0MxNTUuOTkxIDMxLjU1NzcgMTU2Ljk4IDMxLjM5MyAxNTguMDIyIDMxLjU5MjhDMTU5LjgzMyAzMS45NDQgMTYxLjI4MSAzMy40MDc5IDE2MS41NzkgMzUuMjA5NEMxNjEuODg1IDM3LjA2NDUgMTYxLjAyIDM4Ljc1NDkgMTU5LjU5OSAzOS42NzYxQzE1OS41OTkgMzkuNjc2MyAxNTkuNTk5IDM5LjY3NjggMTU5LjYgMzkuNjc2OFoiIGZpbGw9IiMwQzBDMEMiLz48L3N2Zz4=" alt="Robbin" /></div>
 
 <div class="slide-counter"><span class="current">01</span><span style="opacity:0.4"> / 17</span></div>
@@ -8162,8 +8172,6 @@ img[alt="CFA Institute"] { filter: grayscale(1); }
   <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
   <button class="nav-btn" id="nextBtn">next →</button>
 </div>
-
-<div class="deck" id="deck">
 
 <!-- ============ SLIDE 1: COVER ============ -->
 <section class="slide cover5 active" id="cover" data-num="01">
@@ -9593,6 +9601,17 @@ img[alt="CFA Institute"] { filter: grayscale(1); }
       cover.classList.remove('is-dark');
     }
   }, 1200);
+})();
+</script>
+<script>
+(function deckScale() {
+  function update() {
+    const w = window.innerWidth, h = window.innerHeight;
+    const s = Math.min(w / 1600, h / 900);
+    document.documentElement.style.setProperty('--deck-scale', s);
+  }
+  window.addEventListener('resize', update);
+  update();
 })();
 </script>
 </body>
