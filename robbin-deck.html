@@ -7722,6 +7722,50 @@ img[alt="CFA Institute"] { filter: grayscale(1); }
 
 /* Hide deprecated wr3-art / wr3-roles / etc that are no longer in HTML — leftover CSS is harmless */
 
+
+.wr3-vs-head {
+  display: flex; flex-direction: column;
+  gap: 1vh;
+  padding-bottom: 1vh;
+  border-bottom: 1px solid rgba(12,12,12,0.10);
+}
+.wr3-eyebrow-row {
+  display: flex; align-items: center; gap: 8px;
+}
+.wr3-eyebrow-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #0C0C0C;
+  display: inline-block;
+}
+.wr3-eyebrow-txt {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #0C0C0C;
+}
+.wr3-vs .wr3-h3 {
+  font-size: clamp(28px, 3.2vw, 52px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+.wr3-lead {
+  font-family: var(--font-sans);
+  font-size: clamp(13px, 1.05vw, 17px);
+  line-height: 1.5;
+  color: rgba(12,12,12,0.66);
+  max-width: 72ch;
+  margin: 0;
+}
+.wr3-lead b {
+  color: #0C0C0C;
+  font-weight: 800;
+}
+.wr3-vs .wr3-vs-grid { margin-top: 1.6vh; }
+
 </style>
 </head>
 <body>
@@ -7912,12 +7956,14 @@ img[alt="CFA Institute"] { filter: grayscale(1); }
 
     <!-- RIGHT: Artistic consolidation visual -->
     <div class="wr3-vs">
-      <div class="wr3-insight-tag">
-        <span class="wr3-insight-tag-dot"></span>
-        The insight that became Robbin
+      <div class="wr3-vs-head">
+        <div class="wr3-eyebrow-row">
+          <span class="wr3-eyebrow-dot"></span>
+          <span class="wr3-eyebrow-txt">The insight that became Robbin</span>
+        </div>
+        <h3 class="wr3-h3"><span class="wr3-emph">Legacy Payment Network</span></h3>
+        <p class="wr3-lead">3 players run today's payment stack. <b>Robbin collapses them into one</b> — and captures the full economics.</p>
       </div>
-
-      <h3 class="wr3-h3"><span class="wr3-emph">Legacy Payment Network</span></h3>
 
       <div class="wr3-vs-grid">
         <!-- LEFT — LEGACY stack -->
