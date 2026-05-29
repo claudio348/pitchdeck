@@ -6704,10 +6704,12 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
 /* Orbit container */
 .fw4-orbit {
   position: relative;
-  aspect-ratio: 1;
-  width: min(100%, 70vmin);
+  width: 70vmin;
+  height: 70vmin;
   max-width: 720px;
+  max-height: 720px;
   margin: 0 auto;
+  flex-shrink: 0;
 }
 .fw4-rings, .fw4-arrows {
   position: absolute; inset: 0;
@@ -8491,7 +8493,7 @@ img[alt="CFA Institute"] { filter: grayscale(1); }
 
     <div class="fw4-orbit">
       <!-- Subtle ambient ring -->
-      <svg class="fw4-rings" viewBox="0 0 600 600">
+      <svg class="fw4-rings" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet">
         <defs>
           <radialGradient id="fw4Glow" cx="50%" cy="50%">
             <stop offset="0%" stop-color="#FAFAFA" stop-opacity="0.10"/>
