@@ -5876,7 +5876,12 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
   align-self: center;
   gap: 6px;
 }
-.arch3-arrow svg { width: 100%; height: 18px; }
+.arch3-arrow svg {
+  width: calc(100% + 24px);
+  margin: 0 -12px;
+  height: 18px;
+  overflow: visible;
+}
 .arch3-arrow-label {
   font-family: var(--font-mono);
   font-size: 9px; font-weight: 700;
@@ -8223,7 +8228,7 @@ img[alt="CFA Institute"] { filter: grayscale(1); }
             <path d="M0,0 L6,3 L0,6 Z" fill="#0C0C0C"/>
           </marker>
         </defs>
-        <path id="arch3path-dat" d="M 0 10 L 115 10" stroke="#0C0C0C" stroke-width="1.8" fill="none" stroke-linecap="round" marker-end="url(#arch3a-dat)"/>
+        <path id="arch3path-dat" d="M 0 10 L 120 10" stroke="#0C0C0C" stroke-width="1.8" fill="none" stroke-linecap="round"/>
         <circle r="3" fill="#0C0C0C"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#arch3path-dat"/></animateMotion></circle>
       </svg>
     </div>
@@ -8260,7 +8265,7 @@ img[alt="CFA Institute"] { filter: grayscale(1); }
             <path d="M0,0 L6,3 L0,6 Z" fill="#0C0C0C"/>
           </marker>
         </defs>
-        <path id="arch3path-cre" d="M 0 10 L 115 10" stroke="#0C0C0C" stroke-width="1.8" fill="none" stroke-linecap="round" marker-end="url(#arch3a-cre)"/>
+        <path id="arch3path-cre" d="M 0 10 L 120 10" stroke="#0C0C0C" stroke-width="1.8" fill="none" stroke-linecap="round"/>
         <circle r="3" fill="#0C0C0C"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#arch3path-cre"/></animateMotion></circle>
       </svg>
     </div>
@@ -8286,8 +8291,8 @@ img[alt="CFA Institute"] { filter: grayscale(1); }
 
   <!-- Banks row BELOW the flow, centered under Robbin with long vertical arrow -->
   <div class="arch3-banks-v2">
-    <svg class="arch3-banks-long-arrow" viewBox="0 0 20 100" preserveAspectRatio="none">
-      <path id="arch3path-bank2" d="M 10 100 L 10 0" stroke="#0C0C0C" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <svg class="arch3-banks-long-arrow" viewBox="0 0 20 100" preserveAspectRatio="none" style="overflow:visible;">
+      <path id="arch3path-bank2" d="M 10 105 L 10 -5" stroke="#0C0C0C" stroke-width="1.8" fill="none" stroke-linecap="round"/>
       <circle r="3.5" fill="#0C0C0C">
         <animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#arch3path-bank2"/></animateMotion>
       </circle>
