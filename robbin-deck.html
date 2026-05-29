@@ -7169,9 +7169,11 @@ body.is-timeline .deck-mark-mini { display: none; }
 .arch3-banks-long-arrow {
   grid-column: 2 / 4;
   width: 40px;
-  height: clamp(60px, 8vh, 100px);
-  margin: -1px auto 0;
+  height: clamp(70px, 9vh, 120px);
+  margin: -8px auto -8px;
   display: block;
+  position: relative;
+  z-index: 4;
 }
 .arch3-banks-long-arrow path {
   animation: arch3LongFlow 1.8s linear infinite;
@@ -8343,7 +8345,7 @@ img[alt="CFA Institute"] { filter: grayscale(1); }
   <!-- Banks row BELOW the flow, centered under Robbin with long vertical arrow -->
   <div class="arch3-banks-v2">
     <svg class="arch3-banks-long-arrow" viewBox="0 0 20 100" preserveAspectRatio="none" style="overflow:visible;">
-      <path id="arch3path-bank2" d="M 10 110 L 10 -10" stroke="#0C0C0C" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="5 5"/>
+      <path id="arch3path-bank2" d="M 10 120 L 10 -20" stroke="#0C0C0C" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-dasharray="5 5"/>
       <circle r="3.5" fill="#0C0C0C">
         <animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#arch3path-bank2"/></animateMotion>
       </circle>
