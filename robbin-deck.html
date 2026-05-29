@@ -4901,41 +4901,64 @@ body.is-dark-slide .deck-mark-mini img { filter: invert(1); }
 
 .rev2-equity-section {
   margin-top: auto;
-  padding: 1.6vh 1.1vw 1.4vh;
-  background: linear-gradient(135deg, rgba(12,12,12,0.06), rgba(12,12,12,0.02));
-  border: 1px solid rgba(12,12,12,0.12);
-  border-radius: 8px;
+  padding: 2.4vh 1.4vw 2vh;
+  background: linear-gradient(135deg, rgba(12,12,12,0.10), rgba(12,12,12,0.03));
+  border: 1.5px solid #0C0C0C;
+  border-radius: 10px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 14px 32px -12px rgba(12,12,12,0.22);
 }
 .rev2-equity-section::before {
-  content: "EQUITY";
+  content: "";
   position: absolute;
-  top: 6px; right: 8px;
+  top: 0; left: 0; bottom: 0;
+  width: 5px;
+  background: #0C0C0C;
+}
+.rev2-equity-section::after {
+  content: "★ EQUITY";
+  position: absolute;
+  top: 9px; right: 10px;
   font-family: var(--font-mono);
-  font-size: 8.5px;
-  font-weight: 800;
+  font-size: 9px;
+  font-weight: 900;
   letter-spacing: 0.28em;
-  color: rgba(12,12,12,0.25);
+  color: #0C0C0C;
+  background: rgba(12,12,12,0.08);
+  padding: 3px 7px;
+  border-radius: 3px;
 }
 .rev2-equity-section .rev2-section-lbl {
-  font-weight: 800;
+  font-weight: 900;
   color: #0C0C0C;
-  margin-bottom: 1vh;
+  margin-bottom: 1.3vh;
+  font-size: 11px;
+  letter-spacing: 0.26em;
+}
+.rev2-equity-section .rev2-chips {
+  gap: 8px;
 }
 .rev2-equity-section .rev2-chip {
   background: #0C0C0C;
   color: #FAFAFA;
-  border-color: #0C0C0C;
-  font-weight: 700;
+  border: 1.5px solid #0C0C0C;
+  font-weight: 800;
+  font-size: clamp(12px, 0.95vw, 14px);
+  padding: 6px 12px;
+  letter-spacing: -0.005em;
 }
 .rev2-pillar.is-hero .rev2-equity-section {
-  background: linear-gradient(135deg, rgba(250,250,250,0.10), rgba(250,250,250,0.02));
-  border-color: rgba(250,250,250,0.35);
-  box-shadow: 0 0 0 1px rgba(250,250,250,0.10), 0 12px 28px -10px rgba(250,250,250,0.18);
+  background: linear-gradient(135deg, rgba(250,250,250,0.16), rgba(250,250,250,0.04));
+  border-color: #FAFAFA;
+  box-shadow: 0 0 0 1px rgba(250,250,250,0.18), 0 20px 40px -12px rgba(250,250,250,0.22);
 }
 .rev2-pillar.is-hero .rev2-equity-section::before {
-  color: rgba(250,250,250,0.45);
+  background: #FAFAFA;
+}
+.rev2-pillar.is-hero .rev2-equity-section::after {
+  color: #FAFAFA;
+  background: rgba(250,250,250,0.12);
 }
 .rev2-pillar.is-hero .rev2-equity-section .rev2-section-lbl { color: #FAFAFA; }
 .rev2-pillar.is-hero .rev2-equity-section .rev2-chip {
