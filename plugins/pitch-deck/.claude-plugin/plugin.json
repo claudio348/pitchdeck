@@ -1,0 +1,9 @@
+{
+  "name": "pitch-deck",
+  "description": "Builds scroll-driven HTML pitch decks in the Robbin design system (dark theme, gold accent, ambient background, minimap nav, animated counters).",
+  "version": "1.0.0",
+  "author": {
+    "name": "Robbin"
+  },
+  "keywords": ["pitch-deck", "presentation", "slides", "html", "robbin"]
+}

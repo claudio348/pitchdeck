@@ -1,0 +1,13 @@
+{
+  "name": "robbin-decks",
+  "owner": {
+    "name": "Robbin"
+  },
+  "plugins": [
+    {
+      "name": "pitch-deck",
+      "source": "./plugins/pitch-deck",
+      "description": "Builds scroll-driven HTML pitch decks in the Robbin design system — dark theme, gold (#FFAB40) accent, ambient background, fixed topbar, progress bar, side minimap, keyboard/scroll navigation, and animated counters. Use to create, extend, or restyle a pitch deck to match the Robbin decks."
+    }
+  ]
+}
